@@ -1,0 +1,898 @@
+.navigation-agileits {
+    background: #21013a !important;
+}
+.agileits_header {
+    background: #2e12cc69 !important;
+    padding: 1px 0 !important;
+}
+.logo_products {
+    padding: 6px 0 !important;
+}
+.w3ls_logo_products_left1 {
+ 
+    margin-top: 2.6em !important;
+ 
+}
+.w3l_search {
+  
+    margin: 2em 0 0em 0em !important;
+}
+/*--------------------- Menu cao cấp--------------------- */
+.multi-column-dropdown li a {
+    font-weight: bold !important;
+    font-family: sans-serif !important;
+    color: #4e1f98 !important;
+    padding: 4px 6px !important;
+}
+.multi-column-dropdown li :hover {
+    color: white !important;
+    background-color: #5e4d94  !important;
+}
+.multi-column-dropdown li {
+ 
+    margin: 6px 0 !important;
+}
+/* riêng từng  phần */
+.header-area{
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    padding-bottom: 3rem;
+}
+.header-area .about_bg div:nth-of-type(1){
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.header-area .about_bg div img{
+    height: 8.5rem;
+}
+.header-area .about_bg div:nth-of-type(2){
+    position: absolute;
+    top: 0;
+    right:0;
+}
+/* riêng */
+.about_left {
+    position: relative;
+    text-align: center;
+}
+.about_left h6 {
+    font-size: 2rem;
+    font-family: "DancingScript-Bold";
+}
+.about_left h5 {
+    font-size: 2.5rem;
+    color: #ca3d26;
+    font-family: "UTM American";
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    margin-top: 0;
+}
+.about_left p {
+    text-align: justify;
+    font-family: serif;
+    font-size: 19px;
+}
+.h-100 {
+    height: 100% !important;
+}
+.align-items-center {
+    -ms-flex-align: center !important;
+    align-items: center !important;
+}
+.d-flex {
+    display: -ms-flexbox !important;
+    display: flex !important;
+}
+
+@media (min-width: 1200px){
+.col-xl-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+}
+.col-12{
+    position: relative;
+        width: 100%;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .row {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+
+    /* img */
+    .menu_today{
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        display: block;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    .menu_today__inner {
+        width: calc(100% - 4rem);
+        margin: 0 auto;
+        -webkit-box-shadow: 1px 1px 9px 3px #eee;
+        box-shadow: 1px 1px 9px 3px #eee;
+        position: relative;
+        padding-top: 5rem;
+        padding-bottom: 14rem;
+    }
+    .menu_today__inner ul{
+        list-style-type: none;
+    margin: 0;
+    padding: 0;
+    }
+    .menu_today__inner .bg_item li:nth-of-type(1) {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+   
+    .menu_today__inner li{
+        list-style-type: none;
+    margin: 0;
+    padding: 0;
+    }
+    .menu_today__inner .bg_item li:nth-of-type(2) {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .menu_today__inner .bg_item li:nth-of-type(3) {
+        position: absolute;
+        bottom: 0;
+        left:0;
+    }
+    .menu_today__inner .bg_item li:nth-of-type(4) {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+        vertical-align: middle;
+        -o-object-fit: fill;
+        object-fit: fill;
+        -webkit-transition: all 0.3s ease-out 0s;
+        -o-transition: all 0.3s ease-out 0s;
+        transition: all 0.3s ease-out 0s;
+    }
+    .menu_today__inner .bg_item li img{
+        height: 13em;
+    width: 16em;
+    }
+    .top-brand1 {
+        background: #ffffff;
+        /* padding: 5em 0; */
+    }
+    /* dăt bàn---------------------------------------- */
+    .order__area {
+        background-image: url(../images/bg_order.png);
+    }
+    .order__area {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    }
+    .order__area {
+        background-size: cover !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+    }
+    .section__title {
+        position: relative;}
+        .text-center {
+            text-align: center !important;
+        }
+        .mb-4, .my-4 {
+            margin-bottom: 1.5rem !important;
+        }
+        .section__title h6 {
+            font-size: 2rem;
+            color: #fff;
+            font-family: unset;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+        .section__title p {
+            font-size: 1.5rem;
+            font-family: auto;
+            color: #fff;
+            margin-bottom: 1em;
+        }
+        .row {
+           
+            display: flex;
+           
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+        .order_form {
+            padding: 15px 0px;
+        }
+        .order-form input[type="text"],.order-form input[type="email"],
+        .order-form input[type="date"],.order-form input[type="number"]{
+            width: 48%;
+    float: left;
+    height: 3em;
+    font-size: 14px;
+    padding: 10px;
+    background: transparent;
+    color: #cecece;
+    border-radius: 3px;
+    margin-bottom: 20px;
+        }
+       input[type="text"],
+       input[type="date"],input[type="number"],
+       input[type="email"]{
+        border: 1px solid #ced4da;
+       }
+       .order-form input{
+        margin: 0;
+        font-family: inherit;
+        
+       }
+       .order-form input[name="tên"],
+       .order-form input[name="sdt"],
+       .order-form input[name="email"]{
+           margin-right: 1%;
+       }
+       .order-form input[type="submit"] {
+        background-color: #ca3d26;
+        text-transform: uppercase;
+        color: #fff;
+        border: 1px solid #ca3d26;
+        border-radius: 3px;
+        margin-top: 20px;
+        padding: 12px 36px;
+        margin-left: 25em;
+    }
+    .agile-login {
+        width: 53% !important;
+        padding: 9px 0px !important;
+    }
+
+    .newproducts-w3agile .col-md-4{
+        height: 30em;
+    border: 1px solid #1d560f5c;
+    margin: 1px 11px;
+    box-shadow: 0px 8px 6px 6px #ccb5b5;
+    width: 31%;
+    overflow: hidden;
+    padding-right: 0px;
+    padding-left: 0px;
+    }
+    .newproducts-w3agile .col-md-4 .img-news{ 
+        width: 100%;
+    height: 240px;
+    overflow: hidden;
+    }
+    .newproducts-w3agile .col-md-4 .img-news img{
+        width: 100%;
+    height: 240px;
+    transition: all 1s linear;
+    }
+    .newproducts-w3agile .col-md-4 .content{
+        width: 100%;
+        height: 123px;
+    }
+    .newproducts-w3agile .col-md-4 .content .content-title{
+        text-align: center;
+    width: 93%;
+    padding: 6px 40px;
+    height: 56px;
+    border-bottom: 1px solid #ff000052;
+    margin: 10px 0px 9px 12px;
+    }
+    .newproducts-w3agile .col-md-4 .content .content-title h6{
+        font-size: 16px;
+    font-family: serif;
+    color: red;
+    line-height: 20px;
+    }
+    .newproducts-w3agile .col-md-4 .content .content-bg{
+        width: 100%;
+    height: 90%;
+    padding: 2px 15px;
+    }
+    .newproducts-w3agile .col-md-4 .content .content-bg p{
+        text-align: justify;
+    color: #3c1a1a;
+    height: 88px;
+    }
+    .newproducts-w3agile .col-md-4 .img-news:hover img{
+        transform: scale(1.2);
+    }
+    .top_brand_left{
+        margin-bottom: 30px !important;
+    }
+    .agile_top_brand_left_grid1 img {
+        width: 240px !important;
+        height: 184px !important;
+    }
+    .navbar-nav > li:nth-child(1) {
+        margin-left: 110px !important;
+    }
+    /* -----------Trang món khai vị------------------------------- */
+    .header-area1{
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        display: block;
+        padding-bottom: 3rem;
+    }
+    .header-area1 .about_bg div:nth-of-type(1){
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .header-area1 .about_bg div img{
+        height: 11.5rem;
+    }
+    .header-area1 .about_bg div:nth-of-type(2){
+        position: absolute;
+        top: 0;
+        right:0;
+    }
+    /* ----------------Trang ĐẶT BÀN------------------------- */
+    div.home_table{
+        margin-left: -101.5px;
+    padding-left: 101.5px;
+    padding-right: 101.5px;
+    visibility: visible;
+    width: 100%;
+    margin-right: 0px;
+    }
+    div.home_table .banner_table{
+        margin-bottom: 0px !important;
+        background-image: url(../img_sp/bg-datban.jpg);
+    }
+    .sorting-left {
+        float: left !important;
+    }
+
+    /* News báo  */
+    .products .col-md-12 .ajac_post{
+        width: 100%;
+    }
+    .products .col-md-12 .item-new{
+        width: 49%;
+        margin-bottom: 35px;
+        margin-right: 5px;
+        margin-left: 5px;
+        float: left;
+    }
+    .products .col-md-12 .item-new .img-item{
+        width: 35%;
+        float: left;
+    }
+    .products .col-md-12 .item-new .img-item img{
+        width: 16em;
+        height: 12em;
+    }
+    .products .col-md-12 .item-new .ct-new{
+        float: left;
+        width: 65%;
+        padding-left: 15px;
+    }
+    .products .col-md-12 .item-new .ct-new h2{
+        font-size: 25px;
+        font-weight: 600;
+        float: left;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .products .col-md-12 .item-new .ct-new span{
+        color: #767676;
+        font-size: 14px;
+        float: left;
+        width: 100%;
+    }
+    .products .col-md-12 .item-new .ct-new p{
+        color: #751212;
+        font-size: 17px;
+        float: left;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .products .col-md-12 .item-new .ct-new .view-add-new{
+        border: 1px solid #ccc;
+    padding: 5px 9px;
+    border-radius: 7px;
+    box-shadow: 1px 1px 3px #ccc;
+    color: #960b0f;
+    font-weight: 600;
+    float: left;
+    font-size: 12px;
+    }
+/* -----------dịch vụ */
+.products .col-md-9 .service-type{
+    width: 800px;
+    max-width: 800px;
+    padding: 50px 0px 100px 0;
+    float: left;
+}
+.products .col-md-9 .service-type p{
+margin-bottom: 10px;
+}
+.products .col-md-9 .service-type p img{
+ width: 100%;
+}
+/* Chi tiết dochj vụ */
+.products .col-md-3 .video-ser{
+    margin-bottom: 15px;
+    font-size: 14px;
+    border: 1px solid #ecf0f1;
+}
+
+.products .col-md-3 .video-ser h3{
+    font-size: 15px;
+    margin: 0px 0 10px 0;
+    padding: 10px 0 10px 9px;
+    position: relative;
+    font-weight: 700;
+    background: #890802;
+    text-transform: uppercase;
+    color: #fff !important;
+}
+.products .col-md-3 .video-ser p{
+    margin-bottom: 7px;
+    line-height: 18px;
+    font-size: 14px;
+}
+
+
+.products .col-md-3 .news-ser  ul{
+    padding: 0 15px;
+}
+.products .col-md-3 .news-ser  ul li{
+    line-height: 35px;
+    list-style: none;
+    margin: 0 0 15px 0;
+    padding: 0 0 0px 0 !important;
+    display: block;
+    overflow: auto;
+}
+.products .col-md-3 .news-ser  ul li .tt-e{
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    margin-top: 5px;
+    display: block;
+    float: left;
+}
+.products .col-md-3 .news-ser  ul li .ii-s{
+    width: calc(100% - 65px);
+    float: right;
+}
+
+/* Chi tiết san phẩm */
+
+.agileinfo_single_right_details {
+   
+    width: 25% !important;
+}
+.agileinfo_single .cart_gh{
+    float: left;
+}
+.agileinfo_single_right_snipcart {
+   
+    width: 16% !important;
+    
+}
+.agileinfo_single_right_details {
+    
+    width: 29% !important;
+}
+.input--ichiro {
+    margin-top: 15px !important;
+}
+.w3_agileits_contact_grid_right input[type="submit"] {
+   
+    background: #2c2346 !important;
+    font-size: 25px !important;
+}
+/* Giỏ hàng ---------------------------------------------------------------*/
+
+.agileits_header .agile-login .shop_cart{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    outline: none;
+}
+.agileits_header .agile-login a.shop_cart{
+    background: transparent;
+    border: none;
+}
+.agileits_header .agile-login .shop_cart i.fa{
+    font-size: 24px;
+    color: #ffffff;
+    vertical-align: middle;
+}
+.agileits_header .agile-login span.cart-badge{
+    position: absolute;
+    top: 2px;
+    right: 131px;
+    color: #fff;
+    background-color: #ca3d26;
+    width: 20px;
+    height: 19px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 15px;
+    margin: 0;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+/* Giỏ hàng */
+
+.products .agileinfo_single header h1{
+    font-size: 34px;
+    font-family: unset;
+    display: block;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.products .agileinfo_single .cl_tb_cart .rowtd{
+    padding: 1em 1em 2em 3.5em;
+    margin: 0 0 2em;
+    position: relative;
+    background-color: #f7f6f7;
+    color: #515151;
+    border-top: 3px solid #a46497;
+    list-style: none outside;
+    width: auto;
+    word-wrap: break-word;
+    border-top-color: #8fae1b;
+}
+.products .agileinfo_single .cl_tb_cart .rowtd .button{
+    font-size: 100%;
+    margin: 0;
+    line-height: 1;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    overflow: visible;
+    padding: .618em 1em;
+    font-weight: 700;
+    border-radius: 3px;
+    left: auto;
+    color: #515151;
+    background-color: #ebe9eb;
+    border: 0;
+    display: inline-block;
+    background-image: none;
+    box-shadow: none;
+    text-shadow: none;
+    float: right;
+}
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    padding: 15px 12px !important;
+   
+}
+.products .agileinfo_single .cl_tb_cart table.shop_table tr input.button{
+    color: #fff;
+    font-weight: 500;
+    background-color: #4f4f4fab;
+    border-radius: 0;
+    border: 0;
+    padding: 8px 18px;
+    float: right;
+}
+
+.products .agileinfo_single .cl_tb_cart .col-lg-4 div.tongtien .cart_checkout .check_button{
+    background-color: #ca3d26;
+    border-radius: 0;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 16px;
+    padding: 1em;
+    text-align: center;
+    display: block;
+    border: 1px solid #ca3d26;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+} 
+.products .agileinfo_single .cl_tb_cart .col-lg-8 table.shop_table tr td a.xoacart{
+
+display: block;
+    font-size: 35px;
+    width: 1em;
+    color: red!important;
+    text-decoration: none;
+    font-weight: 700;
+    line-height: 33px;
+    padding-left: 31px;
+}
+
+/* Thanh toán------------------------------------------------------ */
+
+.products .agileinfo_single .infor_cart .col-md-6 .infor_kh h2{ 
+    font-size: 18px !important;
+    color: #ffffff !important;
+    background: #ca3d26;
+    text-transform: capitalize;
+    display: block !important;
+    text-align: left !important;
+    padding: 12px 15px !important;
+    border-bottom: 1px solid #e1e1e1 !important;
+    margin: 0;
+}
+.products .agileinfo_single .infor_cart .col-md-6 .infor_kh .form-kh1{ 
+    width: 48%;
+    float: left;
+}
+.products .agileinfo_single .infor_cart .col-md-6 .infor_kh .form-kh1 label{ 
+    width: 100%;
+    line-height: 2;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0;
+    color: red;
+}
+.products .agileinfo_single .infor_cart .col-md-6 .infor_kh .form-kh1 input.txt{
+    font-size: 16px;
+    width: 100%;
+    height: 46px;
+    padding: 10px 13px;
+    border: 1px solid #e1e1e1 !important;
+    border-radius: 0 !important;
+    margin-bottom: 5px!important;
+}
+    
+.products .agileinfo_single .infor_cart .col-md-6 .infor_kh .form-kh label{ 
+    width: 100%;
+    line-height: 2;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0;
+    color: red;
+}
+.products .agileinfo_single .infor_cart .col-md-6 .infor_kh .form-kh input.txt{ 
+    font-size: 16px;
+    width: 100%;
+    height: 46px;
+    padding: 10px 13px;
+    border: 1px solid #e1e1e1 !important;
+    border-radius: 0 !important;
+    margin-bottom: 7px;
+}
+.products .agileinfo_single .infor_cart .col-md-6 .infor_kh .form-kh textarea{ 
+    width: 100%;
+    height: 113px;
+    padding: 11px 9px;
+    border: 1px solid #e1e1e1;
+}
+.products .agileinfo_single .infor_cart .col-md-6 .infor_kh .ct_donhangs{
+    padding-left: 16px;
+    padding-right: 13px;
+}
+.products .agileinfo_single .infor_cart .col-md-6 .infor_kh .ct_donhangs div.ct_cart{
+    padding-top: 15px;
+    line-height: 49px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid #e1e1e1;
+}
+.products .agileinfo_single .infor_cart .col-md-6 .infor_kh .ct_donhangs label{
+    width: 100%;
+    line-height: 2;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0;
+    color: red;
+}
+.products .agileinfo_single .infor_cart .col-md-6 .infor_kh .ct_donhangs p{
+    width: 95% !important;
+    position: relative !important;
+    padding: 0px 22px;
+    margin: 15px 0 0px 15px !important;
+    -webkit-border-radius: 2px !important;
+    border-radius: 2px !important;
+    background-clip: padding-box !important;
+    background: #f8f8f8 !important;
+}
+.products .agileinfo_single .infor_cart .col-md-6 .infor_kh .ct_donhangs .btn_tt{
+    text-align: center;
+    padding-top: 17px;
+    padding-bottom: 17px;
+}
+.products .agileinfo_single .infor_cart .col-md-6 .infor_kh .ct_donhangs .btn_tt input{
+    background-color: #ca3d26;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 12px 44px;
+    margin: 0 auto;
+    border: 1px;
+}
+
+
+
+/* Giỏ hàng chi tiết */
+
+.agileits_header .top_cart{
+    position: absolute;
+    right: 79px;
+    top: 35px;
+    background: #fff;
+    padding: 0;
+    text-align: left;
+    box-shadow: 0 0 15px -5px rgba(0,0,0,0.4);
+    z-index: 10000;
+    display: none;
+    width: 25%;
+    transition: all 0.3s;
+    transform: rotateX();
+}
+
+.agileits_header .top_cart ul{
+    padding: 15px;
+    margin: 0;
+    max-height: 625px;
+    min-width: 320px;
+    overflow: auto;
+}
+.agileits_header .top_cart ul li{
+    border-top: none;
+    padding-top: 10px;
+    list-style: none;
+    padding: 15px 0px 0px 0px;
+    border-top: solid 1px #e1e1e1;
+    width: 100%;
+}
+.agileits_header .top_cart ul li div.food_list{
+    overflow: hidden;
+}
+.agileits_header .top_cart ul li div.food_list a{
+    float: left;
+    display: block;
+    width: 107px;
+    height: 110px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+.agileits_header .top_cart ul li div.food_list div.deatil_item{
+    float: left;
+    display: block;
+    text-align: justify;
+    word-break: break-word;
+    position: relative;
+    width: 59%;
+}
+.agileits_header .top_cart ul li div.food_list div.deatil_item .detail_title{
+    
+}
+.agileits_header .top_cart .detail_title .detail_name{
+    margin: 0;
+    line-height: 1;
+    padding-right: 20px;
+    width: 94%;
+}
+.agileits_header .top_cart .detail_content {
+    margin-bottom: 13px;
+    line-height: 33px;
+}
+.agileits_header .top_cart .detail_content span{
+    display: block;
+}
+.agileits_header .top_cart .detail_content input.ttoan{
+    width: 32px;
+    padding-left: 3px;
+    height: 23px;
+    border: 1px solid #b8cde2;
+}
+
+.agileits_header .top_cart .detail_pay{
+    width: 94%;
+    height: 40px;
+    padding: 8px;
+    padding-right: 46px;
+    border-top: solid 1px #e1e1e1;
+    border-bottom: solid 1px #e1e1e1;
+    margin: 9px;
+}
+.agileits_header .top_cart .detail_pay span.title_tcong{
+    float: left;
+}
+.agileits_header .top_cart .detail_pay span.price{
+    float: right;
+}
+.agileits_header .top_cart .bt-thanhtoan input{
+   
+    min-width: 126px;
+    background: #201e1d;
+    color: #fff;
+}
+.agileits_header .top_cart .bt-thanhtoan{
+    width: 94%;
+    height: 40px;
+    padding: 6px;
+    margin: 9px;
+    text-align: center;
+}
+
+.agileits_header .agile-login ul li:hover div.top_cart {
+    display: block;
+}
+
+
+/* Bổ sung modal */
+
+.modal-content{
+    left:10em !important;
+}
+.login-form-grids {
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+/* Quản lý đơn hàng khách hàng */
+.body_cart_cancel{
+    margin-top: 41px;
+    border: 1px solid #79e2ec;
+    padding: 31px 30px;
+}
+.title_cart_c{
+    text-align: right;
+    border-bottom: 1px solid #8cc6dc;
+    padding-bottom: 17px;
+}
+.title_cart_c p{
+    
+}
+.ct_cart_c{
+    padding: .625rem 0;
+    width: 100%;
+}
+.ct_cart_c .image_cart_c{
+float: left;
+}
+.ct_cart_c .image_cart_c img{
+    width: 100px;
+    
+}
+.sp_cart_cancel{
+    margin: 6px 5px;
+}
+.sp_cart_cancel .name_food_c{
+
+}
+.sp_cart_cancel .type_food_c{
+    
+}
+.sp_cart_cancel .food_quanty{
+    
+}
+.body_cart_cancel .title_cart_c{
+    width: 100%;
+    padding: .625rem 0;
+}
+.body_cart_cancel .title_cart_c h4{
+
+}
