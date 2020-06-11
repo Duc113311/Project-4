@@ -100,4 +100,5 @@
 		$("#total_quanty_number").text($("#total_quanty_cart").val());
 	}
 
+
 </script>

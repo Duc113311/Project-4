@@ -103,7 +103,7 @@
 		</div>
 		<div class="w3ls_logo_products_left">
 			<h1><a href="index.html">
-					<img src="fontend\images\logo1.jpg" alt="" srcset="" style="width: 242px;height: 116px;">
+					<img src="{{asset('fontend\images\logo1.jpg')}}" alt="" srcset="" style="width: 242px;height: 116px;">
 				</a></h1>
 		</div>
 		<div class="w3l_search">

@@ -31,11 +31,11 @@
 
             <div class="tab-content">
                 <div id="home" class="tab-pane fade in active">
-                @foreach($ord_cus as $i)
-                <div class="body_cart_cancel">
+                    @foreach($ord_cus as $i)
+                    <div class="body_cart_cancel">
                         <div class="title_cart_c">
-                           <a href="{{URL::to('/gio-hang/trang_thai_don/'.$i->id)}}">
-                           <button>Huy</button></a>
+                            <a href="{{URL::to('/gio-hang/trang_thai_don/'.$i->id)}}">
+                                <button>Huy</button></a>
                         </div>
                         @foreach($i->order as $item)
                         <div class="ct_cart_c">
@@ -44,7 +44,7 @@
                             </div>
                             <div class="sp_cart_cancel">
                                 <div class="name_food_c">
-                                  {{$item->name_menu}} 
+                                    {{$item->name_menu}}
                                 </div>
                                 <div class="food_quanty">
                                     x {{$item->qty}}
@@ -58,41 +58,70 @@
                         <div class="title_cart_c">
                             <h4>Tổng tiền:</h4> {{$i->totail}}
                         </div>
-                       
+
                     </div>
                     @endforeach
                 </div>
-                
-              
+
+
                 <div id="menu1" class="tab-pane fade">
-                <div class="body_cart_cancel">
-                        <div class="title_cart_c">
-                            <p>ĐÃ HỦY</p>
-                        </div>
-                        <!-- <div class="ct_cart_c">
-                            <div class="image_cart_c sp_cart_cancel">
-                                <img src="{{asset('fontend\images\Bề bề rang muối.jpg')}}" alt="" srcset="">
-                            </div>
-                            <div class="sp_cart_cancel">
-                                <div class="name_food_c">
-                                    Dau củ quả
+                    <div class="body_cart_cancel">
+                        <div class="row f_ct_don">
+                            <div class="col-12 title_f_ct_don">
+                                <div class="col-lg-4 f_code_don">
+                                    <ul>
+                                        <li>Mã đơn hàng: </li>
+                                        <li>Đặt ngày: </li>
+                                    </ul>
                                 </div>
-                                <div class="type_food_c">
-                                    Mon khai vi
+                                <div class="col-lg-4 f_code_don" >
+                                    <ul>
+                                        <li>Người gửi: </li>
+                                        <li>Người nhận: </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-4 f_code_don">
+                                    <ul>
+                                        <li style="text-align: right;">
+                                            <input type="submit" value="Hủy">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-12 body_f_ct_don">
+                                <div class="col-lg-4">
+                                    <div class="ct_img_cart">
+                                        <img src="fontend\images\BạchtuộcKiểuHàn.jpg" alt="" srcset="" style="width:100px;">
+                                    </div>
+                                    <div class="cont_cart">
+                                    <div class="name_food_c">
+                                    Bạch tuộc
                                 </div>
                                 <div class="food_quanty">
-                                    x 1
+                                    Số lương
+                                </div>
+                                <div class="type_food_c">
+                                    đơn giá
+                                </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div> -->
-                        <div class="title_cart_c">
-                            <h4>Tổng tiền:</h4> 30000đ
+                            <div class="col-12 footer_f_ct">
+                                <div class="col-lg-6">
+                                    <a href="#">
+                                        <button>Quay lai Shop</button>
+                                    </a>
+                                </div>
+                                <div class="col-lg-6" style="text-align: right;">
+                                    <h4>Tổng tiền : 100000 VNĐ</h4>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
                 </div>
                 <div id="menu2" class="tab-pane fade">
-                <div class="body_cart_cancel">
+                    <div class="body_cart_cancel">
                         <div class="title_cart_c">
                             <p>ĐÃ HỦY</p>
                         </div>
@@ -119,9 +148,9 @@
                     </div>
                 </div>
                 <div id="menu3" class="tab-pane fade">
-                @foreach($ord_dis as $i)
-                <div class="body_cart_cancel">
-                        
+                    @foreach($ord_dis as $i)
+                    <div class="body_cart_cancel">
+
                         @foreach($i->order as $item)
                         <div class="ct_cart_c">
                             <div class="image_cart_c sp_cart_cancel">
@@ -129,7 +158,7 @@
                             </div>
                             <div class="sp_cart_cancel">
                                 <div class="name_food_c">
-                                  {{$item->name_menu}} 
+                                    {{$item->name_menu}}
                                 </div>
                                 <div class="food_quanty">
                                     x {{$item->qty}}
@@ -143,26 +172,26 @@
                         <div class="title_cart_c">
                             <h4>Tổng tiền:</h4> {{$i->totail}}
                         </div>
-                       
+
                     </div>
                     @endforeach
                 </div>
             </div>
-</div>
-            @include('pages.footer')
-            <!-- Bootstrap Core JavaScript -->
-            @section('script')
-            <script>
-                $(function () {
-                    $('.orderby').change(function () {
-                        $('#form_order').submit();
-                    })
+        </div>
+        @include('pages.footer')
+        <!-- Bootstrap Core JavaScript -->
+        @section('script')
+        <script>
+            $(function () {
+                $('.orderby').change(function () {
+                    $('#form_order').submit();
                 })
-            </script>
+            })
+        </script>
 
-            @endsection
+        @endsection
 
-            @include('pages.js')
+        @include('pages.js')
 </body>
 
 </html>

@@ -1,0 +1,10 @@
+aside.left-panel {
+    background: #06294c!important;
+    width: 250px;
+}
+.navbar {
+    background: #06294c !important;
+}
+.navbar .navbar-nav li.menu-item-has-children .sub-menu {
+    background: #06294c !important;
+}

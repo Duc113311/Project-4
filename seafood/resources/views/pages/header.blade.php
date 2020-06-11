@@ -19,7 +19,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //font-awesome icons -->
 <!-- js -->
 <link rel="stylesheet" type="text/css" href="{{asset('fontend\css\index.css')}}">
-
+<meta name="csrf-token" content="{{ csrf_token() }}" >
 
 <script type="text/javascript" src="{{asset('fontend\js\jquery-1.11.1.min.js')}}"></script>
 <!-- //js -->

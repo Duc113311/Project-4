@@ -13,33 +13,41 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //Font-end
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 Route::get('/','HomeController@index')->name('trangchu');
+
+
 //Danh mục
 // Route::get('/danhmuctfood/{id}','CategoryFood@show_category_list');
 
 //BackEnd
-Route::get('/admin_login','AdminController@index')->name('index');
+// Route::get('/admin_login','AdminController@index')->name('index');
 
 // Route::get('/admin_layout','AdminController@show_admin');
-Route::get('/homes','AdminController@show_admin');
+// Route::get('/homes','AdminController@show_admin');
 
-Route::get('/logout','AdminController@logout');
-Route::post('/admin-homes','AdminController@Show_Home');
+
+Route::get('/homes','CategoryFood@getFood');
+Route::get('/homes1','CategoryFood@getContentFood');
+Route::get('/homes2','CategoryFood@getFoodct')->name('dsfood');
+
+Route::post('/addfood','CategoryFood@create_f')->name('createf');
+// Route::get('/logout','AdminController@logout');
+// Route::post('/admin-homes','AdminController@Show_Home');
 
 // Category_ food
-Route::get('/add-category-food','CategoryFood@add_category_food');
-Route::get('/all-category-food','CategoryFood@getCategoryt');
+// Route::get('/add-category-food','CategoryFood@add_category_food');
+// Route::get('/all-category-food','CategoryFood@getCategoryt');
 
 
-// Route::post('/save-category','CategoryFood@sevecategory');
-Route::post('/addmimage','CategoryFood@store')->name('addmimage');
-// Route::get('/categorypage','CategoryFood@display');
-Route::get('/editimage/{id}','CategoryFood@editfood');
-Route::put('/updateimage/{id}','CategoryFood@updatefood');
-Route::get('/deleteimage/{id}','CategoryFood@deletefood');
+// // Route::post('/save-category','CategoryFood@sevecategory');
+// Route::post('/addmimage','CategoryFood@store')->name('addmimage');
+// // Route::get('/categorypage','CategoryFood@display');
+Route::get('/edit_food/{id}','CategoryFood@editfood')->name('edit');
+Route::put('/update_food/{id}','CategoryFood@updatefood')->name('update');
+Route::get('/deleteimage/{id}','CategoryFood@deletefood')->name('delete');
 
 
 //Người dùng
@@ -81,3 +89,13 @@ Route::get('/trang_thai_don','CartController@getTrangthai')->name('trangthai');
 Route::get('/trang_thai_don/{id}','CartController@distroy_order_cus');
 });
 
+//Sản phẩm bán chạy
+
+// Đặt bàn
+Route::post('/a','HomeController@Booktable')->name('dat_book');
+
+//Bàn ăn uống
+Route::get('/list_room','TableController@getRoom')->name('show_table');
+
+
+Route::post('/table','HomeController@gettable_book')->name('gettb');

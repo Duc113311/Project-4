@@ -138,11 +138,12 @@
 										<p class="w3l-ad">Nhà hàng luôn luôn đặt tiêu chí an toàn lên hàng đầu.</p>
 									</div>
 									<div class="agile_top_brands_grids">
+									@foreach($food_hot as $key=>$ct)
 										<div class="col-md-4 top_brand_left">
 											<div class="hover14 column">
 												<div class="agile_top_brand_left_grid">
 													<div class="agile_top_brand_left_grid_pos">
-														<img src="fontend\images\offer.png" alt=" "
+														<img src="fontend\images\offer.jpg" alt=" "
 															class="img-responsive" />
 													</div>
 													<div class="agile_top_brand_left_grid1">
@@ -150,8 +151,10 @@
 															<div class="snipcart-item block">
 																<div class="snipcart-thumb">
 																	<a href="products.html"><img title=" " alt=" "
-																			src="fontend\/images\Cua Hoàng đế hấp.jpg" /></a>
-																	<p>CUA HOÀNG ĐẾ</p>
+																			src="{{URL::to('/fontend/images/'.$ct->image)}}" /></a>
+																	<a href="{{URL::to('/chitietfood/'.$ct->id)}}">
+																		<p>{{$ct->name_menu}}</p>
+																	</a>
 																	<div class="stars">
 																		<i class="fa fa-star blue-star"
 																			aria-hidden="true"></i>
@@ -164,10 +167,18 @@
 																		<i class="fa fa-star gray-star"
 																			aria-hidden="true"></i>
 																	</div>
-																	<h4>3.000.000đ</h4>
+																	<h4>{{$ct->price}}<sup>₫</sup> </h4>
 																</div>
 																<div class="snipcart-details top_brand_home_details">
-																	
+
+																	<fieldset>
+																		<a onclick="AddCartShop({{$ct->id}})"
+																			href="javascript:">
+																			<input type="submit" name="submit"
+																				value="Thêm vào giỏ" class="button">
+																		</a>
+																	</fieldset>
+
 																</div>
 															</div>
 														</figure>
@@ -175,202 +186,11 @@
 												</div>
 											</div>
 										</div>
-										<div class="col-md-4 top_brand_left">
-											<div class="hover14 column">
-												<div class="agile_top_brand_left_grid">
-													<div class="agile_top_brand_left_grid_pos">
-														<img src="fontend\images\offer.png" alt=" "
-															class="img-responsive" />
-													</div>
-													<div class="agile_top_brand_left_grid1">
-														<figure>
-															<div class="snipcart-item block">
-																<div class="snipcart-thumb">
-																	<a href="products.html"><img title=" " alt=" "
-																			src="fontend\/images\Mực xào cần tỏi tây.jpg" /></a>
-																	<p>MỰC BIỂN</p>
-																	<div class="stars">
-																		<i class="fa fa-star blue-star"
-																			aria-hidden="true"></i>
-																		<i class="fa fa-star blue-star"
-																			aria-hidden="true"></i>
-																		<i class="fa fa-star blue-star"
-																			aria-hidden="true"></i>
-																		<i class="fa fa-star blue-star"
-																			aria-hidden="true"></i>
-																		<i class="fa fa-star gray-star"
-																			aria-hidden="true"></i>
-																	</div>
-																	<h4>300.000đ</h4>
-																</div>
-																<div class="snipcart-details top_brand_home_details">
-																	
-																</div>
-															</div>
-														</figure>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-4 top_brand_left">
-											<div class="hover14 column">
-												<div class="agile_top_brand_left_grid">
-													<div class="agile_top_brand_left_grid_pos">
-														<img src="fontend\images\offer.png" alt=" "
-															class="img-responsive" />
-													</div>
-													<div class="agile_top_brand_left_grid_pos">
-														<img src="fontend\images\offer.png" alt=" "
-															class="img-responsive" />
-													</div>
-													<div class="agile_top_brand_left_grid1">
-														<figure>
-															<div class="snipcart-item block">
-																<div class="snipcart-thumb">
-																	<a href="products.html"><img
-																			src="fontend\./images\Ốc hương nướng.jpg"
-																			alt=" " class="img-responsive" /></a>
-																	<p>ỐC HƯƠNG</p>
-																	<div class="stars">
-																		<i class="fa fa-star blue-star"
-																			aria-hidden="true"></i>
-																		<i class="fa fa-star blue-star"
-																			aria-hidden="true"></i>
-																		<i class="fa fa-star blue-star"
-																			aria-hidden="true"></i>
-																		<i class="fa fa-star blue-star"
-																			aria-hidden="true"></i>
-																		<i class="fa fa-star gray-star"
-																			aria-hidden="true"></i>
-																	</div>
-																	<h4>150.000đ</h4>
-																</div>
-																<div class="snipcart-details top_brand_home_details">
-																	
-																</div>
-															</div>
-														</figure>
-													</div>
-												</div>
-											</div>
-										</div>
+										@endforeach
+										
 										<div class="clearfix"> </div>
 									</div>
-									<div class="agile_top_brands_grids">
-										<div class="col-md-4 top_brand_left">
-											<div class="hover14 column">
-												<div class="agile_top_brand_left_grid">
-													<div class="agile_top_brand_left_grid_pos">
-														<img src="fontend\images\offer.png" alt=" "
-															class="img-responsive" />
-													</div>
-													<div class="agile_top_brand_left_grid1">
-														<figure>
-															<div class="snipcart-item block">
-																<div class="snipcart-thumb">
-																	<a href="products.html"><img title=" " alt=" "
-																			src="fontend\/images\Bách tuộc hấp.jpg" /></a>
-																	<p>BẠCH TUỘC</p>
-																	<div class="stars">
-																		<i class="fa fa-star blue-star"
-																			aria-hidden="true"></i>
-																		<i class="fa fa-star blue-star"
-																			aria-hidden="true"></i>
-																		<i class="fa fa-star blue-star"
-																			aria-hidden="true"></i>
-																		<i class="fa fa-star blue-star"
-																			aria-hidden="true"></i>
-																		<i class="fa fa-star gray-star"
-																			aria-hidden="true"></i>
-																	</div>
-																	<h4>500.000đ </h4>
-																</div>
-																<div class="snipcart-details top_brand_home_details">
-																	
-																</div>
-															</div>
-														</figure>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-4 top_brand_left">
-											<div class="hover14 column">
-												<div class="agile_top_brand_left_grid">
-													<div class="agile_top_brand_left_grid_pos">
-														<img src="fontend\images\offer.png" alt=" "
-															class="img-responsive" />
-													</div>
-													<div class="agile_top_brand_left_grid1">
-														<figure>
-															<div class="snipcart-item block">
-																<div class="snipcart-thumb">
-																	<a href="products.html"><img title=" " alt=" "
-																			src="fontend\/images\Hàu để sống.jpg" /></a>
-																	<p>HÀU ĐÁ BIỂN</p>
-																	<div class="stars">
-																		<i class="fa fa-star blue-star"
-																			aria-hidden="true"></i>
-																		<i class="fa fa-star blue-star"
-																			aria-hidden="true"></i>
-																		<i class="fa fa-star blue-star"
-																			aria-hidden="true"></i>
-																		<i class="fa fa-star blue-star"
-																			aria-hidden="true"></i>
-																		<i class="fa fa-star gray-star"
-																			aria-hidden="true"></i>
-																	</div>
-																	<h4>100.000đ</h4>
-																</div>
-																<div class="snipcart-details top_brand_home_details">
-																	
-																</div>
-															</div>
-														</figure>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-4 top_brand_left">
-											<div class="hover14 column">
-												<div class="agile_top_brand_left_grid">
-													<div class="agile_top_brand_left_grid_pos">
-														<img src="fontend\images\offer.png" alt=" "
-															class="img-responsive" />
-													</div>
-													<div class="agile_top_brand_left_grid1">
-														<figure>
-															<div class="snipcart-item block">
-																<div class="snipcart-thumb">
-																	<a href="products.html"><img
-																			src="fontend\/images\Nôm trứng cua.gif"
-																			alt=" " class="img-responsive" /></a>
-																	<p>NỘM TRỨNG CUA</p>
-																	<div class="stars">
-																		<i class="fa fa-star blue-star"
-																			aria-hidden="true"></i>
-																		<i class="fa fa-star blue-star"
-																			aria-hidden="true"></i>
-																		<i class="fa fa-star blue-star"
-																			aria-hidden="true"></i>
-																		<i class="fa fa-star blue-star"
-																			aria-hidden="true"></i>
-																		<i class="fa fa-star gray-star"
-																			aria-hidden="true"></i>
-																	</div>
-																	<h4>250.000đ </h4>
-																</div>
-																<div class="snipcart-details top_brand_home_details">
-																	
-																</div>
-															</div>
-														</figure>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="clearfix"> </div>
-									</div>
+									
 								</div>
 				</div>
 			</div>
@@ -435,7 +255,7 @@
 		</div>
 		<div class="col-md-6 ban-bottom">
 			<div class="ban-top">
-				<img src="fontend\images\Tôm hùm hấp.jpg" class="img-responsive" alt="" />
+				<img src="{{asset('fontend\images\tomhumhap.jpg')}}" class="img-responsive" alt="" />
 			</div>
 		</div>
 
@@ -452,23 +272,71 @@
 		</div>
 		<div class="row">
 			<div class="col-12">
-				<div class="order-form" style="padding: 20px 86px;">
-					<form action="" method="post">
-						<input class="txt" type="text" name="tên" placeholder="Tên của bạn">
-						<input class="txt" type="date" name="ngay" placeholder="">
-						<input class="txt" type="text" name="sdt" placeholder="Số điện thoại">
-						<input class="txt" type="number" name="songuoi" placeholder="Số người">
-						<input class="txt" type="email" name="email" placeholder="Email của bạn">
-						<input class="txt" type="text" name="ghichu" placeholder="Lời nhắn">
-						<input type="submit" name="cmd" value="Đặt bàn" class="datban">
+				<div class="order-form" style="padding: 0px 23px;">
+				<form action="{{route('dat_book')}}" method="post">
+				@csrf
+					<div class="bk-datban">
+
+						<img class="wp-image-1055" src="fontend\images\title-form-datban.png" alt="" srcset="">
+						<div class="ds"
+							style="width: 100%;padding: 16px 53px;margin: 0 auto;margin-top: 11em;padding-right: 33px;">
+							<ul>
+								<li>
+									<input type="text" name="name_customer" id="" placeholder="Họ tên">
+								</li>
+								<li>
+									<input type="email" name="email" id="" placeholder="Email">
+								</li>
+								<li>
+									<input type="tel" name="phone_number" id="" placeholder="Số điện thoại">
+								</li>
+								<li>
+									<input type="date" name="order_date" id="" placeholder="Ngày ăn">
+								</li>
+								<li>
+									<input type="time" name="Time_eat" id="" placeholder="Giờ ăn">
+								</li>
+								<li>
+									<input type="text" name="min_price" id="" placeholder="Mức giá ăn">
+								</li>
+								<li>
+									<select name="Number_customer" id="" class="n_cus">
+										<option value="">Số khách</option>
+										<option value="1 đến 5 người">1 đến 5 người</option>
+										<option value="5 đến 10 người">5 đến 10 người</option>
+										<option value="10 đến 20 người">10 đến 20 người</option>
+										<option value="trên 20 người">trên 20 người</option>
+									</select>
+								</li>
+								<li>
+									<button type="button" class="list_ban" data-toggle="modal"
+										data-target="#listbandat">
+										Danh sách bàn
+									</button>
+									<input disabled type="text" name="banText" id="banText"readonly>
+									<input type="hidden" name="ban" id="ban" readonly>
+									
+								</li>
+								<li style="float: left;width: 100%;margin-bottom: 10px;">
+									<textarea class="ghichu" name="Note" id="" placeholder="Ghi chú"></textarea>
+								</li>
+								<li style="width: 100%;text-align: center;">
+									<button type="submit" class="book_table">Đặt bàn</button>
+									
+								</li>
+							</ul>
+						</div>
+					</div>
 					</form>
 				</div>
+
 			</div>
 		</div>
-
 	</div>
+
 </div>
 <!--//brands-->
+
 <!-- new -->
 <div class="newproducts-w3agile">
 	<div class="container">
@@ -528,5 +396,127 @@
 		</div>
 	</div>
 </div>
+<div class="modal fade" id="listbandat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+	aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content" style="width: 94%;left: 2em !important;">
+			<div class="modal-header">
+				<div class="col-lg-6">
+				<h4 class="modal-title" id="exampleModalLabel">Danh sách bàn</h4>
+				</div>
+				<div class="col-lg-6" style="text-align: right;">
+				<input type="date" name="date_b" id="" style="background: aquamarine;border: 1px solid #d6c5e2;padding: 3px 4px;">
+				<input type="submit" value="Tìm Bàn" id="tim" class="btn btn-success">
+				</div>
+				
+			</div>
+			<div class="modal-body">
+				<ul class="nav nav-tabs">
+					<li class="active"><a data-toggle="tab" href="#home">Sáng</a></li>
+					<li><a data-toggle="tab" href="#menu1">Trưa</a></li>
+					<li><a data-toggle="tab" href="#menu2">Tối</a></li>
+				</ul>
 
+				<div class="tab-content list_room">
+					<div id="home" class="tab-pane fade in active l_room">
+						<h4>Phòng VIP</h4>
+						<ul id="tbs-list">
+						
+						</ul>
+						
+					</div>
+					<div id="menu1" class="tab-pane fade l_room">
+						<h4>Phòng VIP</h4>
+						<ul id="tbc-list">
+							
+						</ul>
+						<h4>Bàn</h4>
+						<ul>
+							
+						</ul>
+					</div>
+					<div id="menu2" class="tab-pane fade l_room">
+						<h4>Phòng VIP</h4>
+						<ul id="tbt-list">
+							
+						</ul>
+						<h4>Bàn</h4>
+						<ul>
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	jQuery('body').on('click', '.btn-chon', function () {
+
+			var banText = $(this).context.innerText;
+			var ban = $(this).val();
+			console.log(ban)
+			jQuery('#ban').val(ban);
+			jQuery('#banText').val(banText);
+			jQuery('#listbandat').modal('hide');
+        });
+	// function myFunction() {
+	// 	var ban = $(this).val();
+	// 	jQuery('#ban').val(ban);
+	// 	jQuery('#listbandat').modal('hide');
+	// };
+	$("#tim").click(function (e) {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            e.preventDefault();
+            var formData = {
+                date_b: jQuery('#date_b').val(),
+            };
+            var type = "POST";
+            var ajaxurl = '{{ url("/table") }}';
+            
+            $.ajax({
+                type: type,
+                url: ajaxurl,
+                data: formData,
+                dataType: 'json',
+                success: function (data) {
+					console.log(data);
+					var date_b= jQuery('#date_b').val();
+					// forEach(data, function(tb){
+					// 	var link = "<li><a href='#'>"+tb.name_table+"</a></li>";
+					// jQuery('#tb-list').append(link);
+					// });
+					$.each(data, function(i, value){
+						var link = "<li><button class='btn-chon form-control' id='chon'  value='"+value.id+"'>"+value.name_table+"</button></li>";
+						if((value.order_date!=date_b) | (value.order_date==null))
+						{
+							jQuery('#tbs-list').append(link);
+							jQuery('#tbt-list').append(link);
+							jQuery('#tbc-list').append(link);
+						}
+						if((value.status==0)& (value.order_date==date_b) )
+						{
+							jQuery('#tbs-list').append(link);
+						}
+						if((value.status==1)& (value.order_date==date_b) )
+						{
+							jQuery('#tbc-list').append(link);
+						}
+			
+					});
+                },
+                error: function (data) {
+                    console.log('Error:', data);
+                }
+            });
+        });
+		
+</script>
 @endsection

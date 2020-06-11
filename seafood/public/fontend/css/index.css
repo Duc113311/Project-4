@@ -224,46 +224,107 @@
             margin-right: -15px;
             margin-left: -15px;
         }
-        .order_form {
-            padding: 15px 0px;
-        }
-        .order-form input[type="text"],.order-form input[type="email"],
-        .order-form input[type="date"],.order-form input[type="number"]{
-            width: 48%;
-    float: left;
-    height: 3em;
-    font-size: 14px;
-    padding: 10px;
-    background: transparent;
-    color: #cecece;
-    border-radius: 3px;
-    margin-bottom: 20px;
-        }
-       input[type="text"],
-       input[type="date"],input[type="number"],
-       input[type="email"]{
-        border: 1px solid #ced4da;
-       }
-       .order-form input{
-        margin: 0;
-        font-family: inherit;
         
-       }
-       .order-form input[name="tên"],
-       .order-form input[name="sdt"],
-       .order-form input[name="email"]{
-           margin-right: 1%;
-       }
-       .order-form input[type="submit"] {
-        background-color: #ca3d26;
-        text-transform: uppercase;
-        color: #fff;
-        border: 1px solid #ca3d26;
-        border-radius: 3px;
-        margin-top: 20px;
-        padding: 12px 36px;
-        margin-left: 25em;
+        .order__area .order-form .bk-datban ul{
+            list-style: none;
+        }
+        .order__area .order-form .bk-datban ul li{
+            float: left;
+    width: 50%;
+    margin-bottom: 10px;
+        }
+        .order__area .order-form .bk-datban ul li input{
+            width: 91%;
+    padding: 10px 11px;
+    background: none !important;
+    border: 1px solid #c3840c;
+    height: 39px;
+        }
+        .order__area .order-form .bk-datban ul li .n_cus{
+            width: 91%;
+            padding: 10px 11px;
+            background: none !important;
+            border: 1px solid #c3840c;
+            height: 39px;
+        }
+        .order__area .order-form .bk-datban ul li button.list_ban{
+            width: 91%;
+            padding: 10px 11px;
+            background: none !important;
+            border: 1px solid #c3840c;
+            height: 39px;
+        }
+        .order__area .order-form .bk-datban ul li textarea.ghichu{
+            
+            padding: 10px 11px;
+            background: none !important;
+            border: 1px solid #c3840c;
+            width: 95.5%;
+        }
+        .order__area .order-form .bk-datban ul li button.book_table{
+            background: #890802;
+            padding: 10px 15px;
+            min-width: 120px;
+            color: #ffffff;
+            font-weight: 700 !important;
+            font-size: 14px;
+            border: navajowhite;
+            border-radius: 3px;
+        }
+        .nav-tabs > li {
+            width: 21% !important;
+        }
+    /* back- dat ban */
+    .order__area .order-form .bk-datban{
+        background: url(../images/bg-dat-ban.png) no-repeat center;
+        background-size: 100%;
+        padding: 209px 0;
+        width: 59%;
     }
+    .list_room{
+        padding: 21px 11px;
+    }
+    
+    .list_room div.l_room h4{
+        width: 100%;
+    float: right;
+    }
+    .list_room div.l_room ul{
+        list-style: none;
+    }
+    .list_room div.l_room ul li{
+        width: 169px;
+    padding: 14px 9px;
+    display: inline-block;
+    }
+    .list_room div.l_room ul li a{
+        border: 1px solid;
+    padding: 6px;
+    border-radius: 5px;
+    background: red;
+    color: white;
+    } 
+    .nav-tabs>li>a {
+        font-size: 14px!important;
+    }
+    .modal-header {
+        min-height: 67.428571px !important;
+       
+    }
+    @media screen and (-webkit-min-device-pixel-ratio: 0){
+input[type="date"], input[type="time"], input[type="datetime-local"], input[type="month"] {
+    line-height: 14px !important;
+}
+    }
+    .order__area .order-form .bk-datban img{
+        padding-top: 0px;
+    margin: -11em auto;
+    }
+    img[class*="wp-image-"] {
+        display: block;
+    }
+    /* Dat ban */
+
     .agile-login {
         width: 53% !important;
         padding: 9px 0px !important;
@@ -856,8 +917,54 @@ display: block;
 .body_cart_cancel{
     margin-top: 41px;
     border: 1px solid #79e2ec;
-    padding: 31px 30px;
+    padding: 0px 15px;
+    width: 100%;
+    padding-bottom: 15px;
 }
+.body_cart_cancel .title_f_ct_don{
+    background: aqua;
+    padding: 12px 7px;
+    width: 100%;
+}
+.body_cart_cancel .title_f_ct_don .f_code_don{
+    
+}
+.body_cart_cancel .title_f_ct_don .f_code_don ul{
+    list-style: none;
+}
+.body_cart_cancel .title_f_ct_don .f_code_don ul li{
+    padding: 2px;
+}
+.body_cart_cancel .title_f_ct_don .f_code_don ul li input{
+
+}
+.body_cart_cancel .body_f_ct_don{
+    padding: 10px 10px;
+    width: 100%;
+    
+}
+.body_cart_cancel .body_f_ct_don .ct_img_cart{
+
+}
+.body_cart_cancel .body_f_ct_don .ct_img_cart img{
+
+}
+.body_cart_cancel .body_f_ct_don .cont_cart{
+
+}
+
+.body_cart_cancel .footer_f_ct{
+    width: 100%;
+    padding: 10px 10px;
+
+}
+.body_cart_cancel .footer_f_ct col-lg-6 a button{
+    
+}
+.body_cart_cancel .footer_f_ct col-lg-6 h4{
+
+}
+/* Hết */
 .title_cart_c{
     text-align: right;
     border-bottom: 1px solid #8cc6dc;

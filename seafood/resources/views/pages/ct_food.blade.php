@@ -81,32 +81,55 @@
 			<div class="container">
 			<h3>MÓN LIÊN QUAN</h3>
 				<div class="agile_top_brands_grids">
-                  
-					<div class="col-md-3 top_brand_left-1">
-						<div class="hover14 column">
-							<div class="agile_top_brand_left_grid">
-								<div class="agile_top_brand_left_grid_pos">
-									<img src="images/offer.png" alt=" " class="img-responsive">
-								</div>
-								<div class="agile_top_brand_left_grid1">
-									<figure>
-										<div class="snipcart-item block">
-											<div class="snipcart-thumb">
-												<a href="products.html"><img title=" " alt=" " src=""></a>		
-												<p></p>
-												
-													<p></h4><sup>₫</p>
-											</div>
-											<div class="snipcart-details top_brand_home_details">
-									
-																	
+                  @foreach($relate as $key=>$lienquan)
+				  <div class="col-md-4 top_brand_left">
+											<div class="hover14 column">
+												<div class="agile_top_brand_left_grid">
+													<div class="agile_top_brand_left_grid_pos">
+														<img src="fontend\images\offer.jpg" alt=" "
+															class="img-responsive" />
+													</div>
+													<div class="agile_top_brand_left_grid1">
+														<figure>
+															<div class="snipcart-item block">
+																<div class="snipcart-thumb">
+																	<a href="products.html"><img title=" " alt=" "
+																			src="{{URL::to('/fontend/images/'.$lienquan->image)}}" /></a>
+																	<a href="{{URL::to('/chitietfood/'.$lienquan->id)}}">
+																		<p>{{$lienquan->name_menu}}</p>
+																	</a>
+																	<div class="stars">
+																		<i class="fa fa-star blue-star"
+																			aria-hidden="true"></i>
+																		<i class="fa fa-star blue-star"
+																			aria-hidden="true"></i>
+																		<i class="fa fa-star blue-star"
+																			aria-hidden="true"></i>
+																		<i class="fa fa-star blue-star"
+																			aria-hidden="true"></i>
+																		<i class="fa fa-star gray-star"
+																			aria-hidden="true"></i>
+																	</div>
+																	<h4>{{$lienquan->price}}<sup>₫</sup> </h4>
+																</div>
+																<div class="snipcart-details top_brand_home_details">
+
+																	<fieldset>
+																		<a onclick="AddCartShop({{$lienquan->id}})"
+																			href="javascript:">
+																			<input type="submit" name="submit"
+																				value="Thêm vào giỏ" class="button">
+																		</a>
+																	</fieldset>
+
+																</div>
+															</div>
+														</figure>
+													</div>
+												</div>
 											</div>
 										</div>
-									</figure>
-								</div>
-							</div>
-						</div>
-					</div>
+										@endforeach
 			
 						<div class="clearfix"> </div>
 				</div>

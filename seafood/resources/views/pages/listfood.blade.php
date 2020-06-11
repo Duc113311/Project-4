@@ -75,17 +75,16 @@
 					<div class="products-right-grids">
 						<form action="" id="form_order" method="get">
 							<div class="sorting">
-								<select id="country" name="orderby" onchange="change_country(this.value)"
-									class="orderby frm-field required sect">
-									<option value="md"><i class="fa fa-arrow-right" aria-hidden="true"></i>Mặc định phân
+								<select id="country" onchange="orderby1(this)" name="orderby" >
+									<option value="md"></i>Mặc định phân
 										loại</option>
-									<option value="desc"><i class="fa fa-arrow-right" aria-hidden="true"></i>Mới nhất
+									<option value="desc"></i>Mới nhất
 									</option>
-									<option value="ace"><i class="fa fa-arrow-right" aria-hidden="true"></i>Món cũ
+									<option value="ace"></i>Món cũ
 									</option>
-									<option value="price_max"><i class="fa fa-arrow-right" aria-hidden="true"></i>Giá
+									<option value="price_max"></i>Giá
 										tăng dần</option>
-									<option value="price_min"><i class="fa fa-arrow-right" aria-hidden="true"></i>Giá
+									<option value="price_min"></i>Giá
 										dảm dần</option>
 								</select>
 							</div>
@@ -162,24 +161,22 @@
 		</div>
 	</div>
 	<!-- //new -->
-	@include('pages.footer')
-	<!-- Bootstrap Core JavaScript -->
 	@section('script')
-	<script>
-		$(function () {
-			$('.orderby').change(function () {
-				$('#form_order').submit();
-			})
-		})
+	<script type="text/javascript">
+		// $(function () {
+		// 	$('.orderby').change(function () {
+		// 		$('#form_order').submit();
+		// 	})
+		// })
+		
 	</script>
 
-	@endsection
-
+	@stop
+	@include('pages.footer')
+	<!-- Bootstrap Core JavaScript -->
 
 	@include('pages.js')
-
-
-
+	
 </body>
 
 </html>
