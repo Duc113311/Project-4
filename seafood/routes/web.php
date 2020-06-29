@@ -19,65 +19,90 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','HomeController@index')->name('trangchu');
 
 
-//Danh mục
-// Route::get('/danhmuctfood/{id}','CategoryFood@show_category_list');
-
-//BackEnd
-// Route::get('/admin_login','AdminController@index')->name('index');
-
-// Route::get('/admin_layout','AdminController@show_admin');
-// Route::get('/homes','AdminController@show_admin');
-
-
 Route::get('/homes','CategoryFood@getFood');
 Route::get('/homes1','CategoryFood@getContentFood');
 Route::get('/homes2','CategoryFood@getFoodct')->name('dsfood');
 
+
+//Loại sản phẩm
+Route::get('/view_add_type_f','CategoryFood@view_create_tf')->name('view_create');
+Route::post('/addtype_food','CategoryFood@create_type_f')->name('create_tf');
+//Sản phẩm
 Route::post('/addfood','CategoryFood@create_f')->name('createf');
-// Route::get('/logout','AdminController@logout');
-// Route::post('/admin-homes','AdminController@Show_Home');
-
-// Category_ food
-// Route::get('/add-category-food','CategoryFood@add_category_food');
-// Route::get('/all-category-food','CategoryFood@getCategoryt');
-
-
-// // Route::post('/save-category','CategoryFood@sevecategory');
-// Route::post('/addmimage','CategoryFood@store')->name('addmimage');
-// // Route::get('/categorypage','CategoryFood@display');
 Route::get('/edit_food/{id}','CategoryFood@editfood')->name('edit');
 Route::put('/update_food/{id}','CategoryFood@updatefood')->name('update');
 Route::get('/deleteimage/{id}','CategoryFood@deletefood')->name('delete');
+//Loại nguyên liệu
+Route::get('/view_res_type','ResourcesController@view_res_type')->name('view_create_t');
+Route::post('/addres_t','ResourcesController@create_type_res')->name('creat_t');
+//Nguyên Liệu
+Route::get('/resources','ResourcesController@getRes')->name('get_res');
+Route::post('/addres','ResourcesController@creat_res')->name('creat_reso');
+Route::get('/edit_res/{id}','ResourcesController@eidt_res')->name('edit_res');
+Route::put('/update_res/{id}','ResourcesController@updateres')->name('update');
+Route::get('/delete_res/{id}','ResourcesController@deleteres')->name('delete');
 
 
+//Đơn hàng.
+Route::get('/chuaxacnhan','CartController@getDonHang')->name('getxacnhan');
+Route::get('/huydonhang/{id}','CartController@getconfim');
+
+Route::get('/huydonhang','CartController@gethuydon')->name('get_huy');
+Route::get('/view_ct_donhang','CartController@viewctdonhang')->name('view_order');
+
+Route::get('/xacnhandon/{id}','CartController@get_xacnhan');
+Route::get('/xacnhandon','CartController@view_xacnhan')->name('get_xacnhandon');
+
+Route::get('/chebienxong/{id}','CartController@get_chebien');
+Route::get('/chebienxong','CartController@view_chebien')->name('get_chebienxong');
+
+Route::get('/chebienxong/{id}','CartController@get_chebien');
+Route::get('/chebienxong','CartController@view_chebien')->name('get_chebienxong');
+//View Chi tiết đơn hàng online
+Route::get('/view_ct_don_onl/{id}','CartController@view_ctdonhang')->name('view_ct_dh_on');
+
+// Đặt Bàn
+Route::post('/view_thucdon_dat/{id}','TableController@postOrderFood');
+Route::get('/view_ban_chua_xh','TableController@get_table_xh')->name('view_table_dat');
+Route::get('/view_ban_xh','TableController@view_table_xh')->name('view_tb_xn');
+Route::get('/xacnhanban/{id}','TableController@table_xacnhan');
 //Người dùng
 Route::get('/chitietmuc/{id}','HomeController@Showcategory_food');
-
+Route::get('/chitietmuc/{id}','HomeController@Showcategory_food');
 Route::get('/chitietfood/{id}','HomeController@Details_food');
+//Comment sản phẩm
+Route::post('/chitietfood/{id}','HomeController@postComment');
+//Tìm kiếm 
+Route::get('/search','HomeController@getSearch');
 // Giỏ hàng
 
 Route::get('/Add-Cart/{id}','CartController@AddCartFood');
-
 Route::get('/DeleteCart/{id}','CartController@Delete_food_cart');
-
 Route::get('/list_cart_food','CartController@View_shopcart');
-
 Route::get('/delete_list_cart/{id}','CartController@Delete_cart');
-
-
 Route::get('/save-cart-item/{id}/{quanty}','CartController@Save_cart_food');
 
-//Đăng nhập khasch hàng
+//Đăng nhập khach hàng
 Route::get('/login_use','UserController@getSignup');
 Route::post('/login_customer','UserController@login_customer')->name('login_customer');
 Route::post('/login_use','UserController@login')->name('login');
+
+//Login_admin
+Route::group(['prefix'=>'login_a','middleware'=>'CheckLoginIn'],function(){
+    Route::get('/Login_admin','UserController@getLoginAdmin');
+    Route::post('/Login_admin','UserController@postLogin')->name('name_login');
+});
+Route::group(['prefix'=>'logout_a','middleware'=>'CheckLogOut'],function(){
+Route::get('/Logout_admin','UserController@getLogout');
+});
+//Gửi Mail
 
 //logout
 Route::get('/logout','UserController@logout')->name('logout');
 
 //Đăng ký tài khoản
 
-Route::post('/register','UserController@register')->name('register');
+Route::post('/_register','UserController@register_dk')->name('dangky');
 
 
 // Thanh toán
@@ -96,6 +121,5 @@ Route::post('/a','HomeController@Booktable')->name('dat_book');
 
 //Bàn ăn uống
 Route::get('/list_room','TableController@getRoom')->name('show_table');
-
 
 Route::post('/table','HomeController@gettable_book')->name('gettb');

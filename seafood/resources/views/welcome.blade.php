@@ -9,6 +9,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <head>
 @include('pages.header')
 <!-- start-smoth-scrolling -->
+@yield('css')
 </head>
 	
 <body>
@@ -27,6 +28,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     @include('pages.footer')
 <!-- Bootstrap Core JavaScript -->
    @include('pages.js')
+
+   @yield('js')
 <!-- //main slider-banner --> 
 </body>
 </html>

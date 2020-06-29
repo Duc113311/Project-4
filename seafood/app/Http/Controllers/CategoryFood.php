@@ -45,7 +45,7 @@ class CategoryFood extends Controller
             }
         }
     }
-    $cate=DB::table('tbl_category')->where('idparent',0)->orderBy('id','asc')->get();
+    $cate=DB::table('tbl_category')->where('idparent','0')->orderBy('id','asc')->get();
        return view('admin.Food.list_food_c')->with("datas",$this->cates)->with('cate',$cate);
    }
 
@@ -94,6 +94,19 @@ class CategoryFood extends Controller
         'food'=>$category,
         'status' => true
     ]);
+    }
+
+    public function create_type_f(Request $request)
+    {
+        $category = new categorymodel();
+        $category->name_menu=$request->name_menu;
+        $category->idparent=$request->idparent;
+        $category->save();
+        return redirect('/homes2')->with('category',$category);
+    }
+    public function view_create_tf()
+    {
+        return view('admin.Food.create_type_f');
     }
 
 }

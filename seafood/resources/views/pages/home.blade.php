@@ -16,16 +16,15 @@
 				<div class="about_left">
 					<h6>Đôi nét về</h6>
 					<h5>NHÀ HÀNG SEAFOOD</h5>
-					<P>NHÀ HÀNG HOÀNG CHÂU chuyên phục vụ các món ăn hải sản độc đáo với cách chế biến mới lạ.
-						Đến với NHÀ HÀNG HOÀNG CHÂU quý khách sẽ vô cùng ngạc nhiên bởi sự phong phú của các
+					<P>NHÀ HÀNG SEAFOOD chuyên phục vụ các món ăn hải sản độc đáo với cách chế biến mới lạ.
+						Đến với NHÀ HÀNG SEAFOOD quý khách sẽ vô cùng ngạc nhiên bởi sự phong phú của các
 						món ăn được chế biến từ những nguyên liệu tươi ngon nhất. Thực khách sẽ được tự tay chọn
 						các loại hải sản tươi sống như: Tôm hùm, hào, cua, mực, cá mú, cá đuối… Quý khách sẽ được
 						thưởng thức những món ăn tuyệt vời trong không gian sang trọng, ấm cúng. Nhà hàng chúng tôi
 						với đội ngũ nhân viên phục vụ chuyên nghiệp, tận tâm để đảm bảo quý thực khách có trải nghiệm
 						ẩm thực khó quên với hương vị biển. Không sử dụng các nguyên liệu tái sinh hay phẩm màu để đảm
-						bảo mang đến cho quý thực khách những món ăn ngon an toàn sức khỏe. Đầu Bếp của NHÀ HÀNG HOÀNG
-						CHÂU đều là những Đầu Bếp chuyên nghiệp nhiều năm kinh nghiệm . Đặc biệt,
-						NHÀ HÀNG HOÀNG CHÂU có thể đáp ứng được số lượng chỗ ngồi để đón tiếp các đoàn khách lớn.</P>
+						bảo mang đến cho quý thực khách những món ăn ngon an toàn sức khỏe. Đầu Bếp của NHÀ HÀNG SEAFOOD đều là những Đầu Bếp chuyên nghiệp nhiều năm kinh nghiệm . Đặc biệt,
+						NHÀ HÀNG SEAFOOD có thể đáp ứng được số lượng chỗ ngồi để đón tiếp các đoàn khách lớn.</P>
 				</div>
 			</div>
 			<div class="col-12 col-xl-6">
@@ -67,12 +66,12 @@
 						<li role="presentation" class="active"><a href="#expeditions" id="expeditions-tab" role="tab"
 								data-toggle="tab" aria-controls="expeditions" aria-expanded="true">CÁC MÓN MỚI</a></li>
 						<li role="presentation"><a href="#tours" role="tab" id="tours-tab" data-toggle="tab"
-								aria-controls="tours" ">MÓN ĂN HÔM NAY</a></li>
+								aria-controls="tours" ">CÁC MÓN NỔI BẬT</a></li>
 							</ul>
 							<div id=" myTabContent" class="tab-content">
 								<div role="tabpanel" class="tab-pane fade in active" id="expeditions"
 									aria-labelledby="expeditions-tab">
-									<div class="agile-tp">
+									<div class="agile-tp" style="padding: 11px 19px;">
 										<h5>Hải sản tươi sống</h5>
 										<p class="w3l-ad">Nhà hàng SEAFOOD đem lại những hương vị biển cả cho mọi người.
 										</p>
@@ -91,7 +90,7 @@
 															<div class="snipcart-item block">
 																<div class="snipcart-thumb">
 																	<a href="products.html"><img title=" " alt=" "
-																			src="{{URL::to('/fontend/images/'.$ct->image)}}" /></a>
+																			src="{{URL::to(''.$ct->image)}}" /></a>
 																	<a href="{{URL::to('/chitietfood/'.$ct->id)}}">
 																		<p>{{$ct->name_menu}}</p>
 																	</a>
@@ -107,7 +106,7 @@
 																		<i class="fa fa-star gray-star"
 																			aria-hidden="true"></i>
 																	</div>
-																	<h4>{{$ct->price}}<sup>₫</sup> </h4>
+																	<h4>{{number_format($ct->price)}}<sup>₫</sup> </h4>
 																</div>
 																<div class="snipcart-details top_brand_home_details">
 
@@ -133,7 +132,7 @@
 
 								</div>
 								<div role="tabpanel" class="tab-pane fade" id="tours" aria-labelledby="tours-tab">
-									<div class="agile-tp">
+									<div class="agile-tp" style="padding: 11px 19px;">
 										<h5>An toàn thực phẩm</h5>
 										<p class="w3l-ad">Nhà hàng luôn luôn đặt tiêu chí an toàn lên hàng đầu.</p>
 									</div>
@@ -151,7 +150,7 @@
 															<div class="snipcart-item block">
 																<div class="snipcart-thumb">
 																	<a href="products.html"><img title=" " alt=" "
-																			src="{{URL::to('/fontend/images/'.$ct->image)}}" /></a>
+																			src="{{URL::to(''.$ct->image)}}" /></a>
 																	<a href="{{URL::to('/chitietfood/'.$ct->id)}}">
 																		<p>{{$ct->name_menu}}</p>
 																	</a>
@@ -167,7 +166,7 @@
 																		<i class="fa fa-star gray-star"
 																			aria-hidden="true"></i>
 																	</div>
-																	<h4>{{$ct->price}}<sup>₫</sup> </h4>
+																	<h4>{{number_format($ct->price)}}<sup>₫</sup> </h4>
 																</div>
 																<div class="snipcart-details top_brand_home_details">
 
@@ -234,19 +233,19 @@
 	<div class="container">
 		<div class="col-md-6 ban-bottom3">
 			<div class="ban-top">
-				<img src="fontend\images\nhahang4.jpg" class="img-responsive" alt="" />
+				<img src="{{asset('fontend\images\nhahang4.jpg')}}" class="img-responsive" alt="" />
 
 			</div>
 			<div class="ban-img">
 				<div class=" ban-bottom1">
 					<div class="ban-top">
-						<img src="fontend\images\Cua Hấp.jpg" class="img-responsive" alt="" />
+						<img src="{{asset('upload_image/files/cuabienrangmuoi.jpg')}}" class="img-responsive" alt="" />
 
 					</div>
 				</div>
 				<div class="ban-bottom2">
 					<div class="ban-top">
-						<img src="fontend\images\Mực xào sa tế.jpg" class="img-responsive" alt="" />
+						<img src="{{asset('upload_image/files/Mực xào sa tế.jpg')}}" class="img-responsive" alt="" />
 
 					</div>
 				</div>
@@ -255,7 +254,7 @@
 		</div>
 		<div class="col-md-6 ban-bottom">
 			<div class="ban-top">
-				<img src="{{asset('fontend\images\tomhumhap.jpg')}}" class="img-responsive" alt="" />
+				<img src="{{asset('upload_image/files/tomhumhap.jpg')}}" class="img-responsive" alt="" />
 			</div>
 		</div>
 
@@ -271,9 +270,9 @@
 			<P>Vui lòng điền đầy đủ thông tin dưới để đặt bàn ngay</P>
 		</div>
 		<div class="row">
-			<div class="col-12">
+			<div class="col-md-7">
 				<div class="order-form" style="padding: 0px 23px;">
-				<form action="{{route('dat_book')}}" method="post">
+				<form action="{{ route('dat_book') }}" method="post">
 				@csrf
 					<div class="bk-datban">
 
@@ -290,12 +289,7 @@
 								<li>
 									<input type="tel" name="phone_number" id="" placeholder="Số điện thoại">
 								</li>
-								<li>
-									<input type="date" name="order_date" id="" placeholder="Ngày ăn">
-								</li>
-								<li>
-									<input type="time" name="Time_eat" id="" placeholder="Giờ ăn">
-								</li>
+								
 								<li>
 									<input type="text" name="min_price" id="" placeholder="Mức giá ăn">
 								</li>
@@ -320,9 +314,14 @@
 								<li style="float: left;width: 100%;margin-bottom: 10px;">
 									<textarea class="ghichu" name="Note" id="" placeholder="Ghi chú"></textarea>
 								</li>
+								<li>
+									<input type="hidden" name="order_date" id="order_date" placeholder="Ngày ăn">
+								</li>
+								<li>
+									<input type="hidden" name="time_order" id="time_order">
+								</li>
 								<li style="width: 100%;text-align: center;">
 									<button type="submit" class="book_table">Đặt bàn</button>
-									
 								</li>
 							</ul>
 						</div>
@@ -331,6 +330,9 @@
 				</div>
 
 			</div>
+			<div class="col-md-5" style="padding-top: 4em;">
+			<img src="{{asset('/fontend/images/lienhedatabn.png')}}" alt="" srcset="">
+				</div>
 		</div>
 	</div>
 
@@ -340,7 +342,7 @@
 <!-- new -->
 <div class="newproducts-w3agile">
 	<div class="container">
-		<h3>TIM NỔI BẬT</h3>
+		<h3>TIN TỨC MỚI</h3>
 		<div class="agile_top_brands_grids">
 			<div class="col-md-4">
 				<div class="img-news">
@@ -405,29 +407,29 @@
 				<h4 class="modal-title" id="exampleModalLabel">Danh sách bàn</h4>
 				</div>
 				<div class="col-lg-6" style="text-align: right;">
-				<input type="date" name="date_b" id="" style="background: aquamarine;border: 1px solid #d6c5e2;padding: 3px 4px;">
+				<input type="date" name="date_b" id="date_b" style="background: aquamarine;border: 1px solid #d6c5e2;padding: 3px 4px;">
 				<input type="submit" value="Tìm Bàn" id="tim" class="btn btn-success">
 				</div>
 				
 			</div>
 			<div class="modal-body">
 				<ul class="nav nav-tabs">
-					<li class="active"><a data-toggle="tab" href="#home">Sáng</a></li>
-					<li><a data-toggle="tab" href="#menu1">Trưa</a></li>
-					<li><a data-toggle="tab" href="#menu2">Tối</a></li>
+					<li class="active"><a data-toggle="tab" href="#home" onClick="changeStatus(1)">Sáng</a></li>
+					<li><a data-toggle="tab" href="#menu1"  onClick="changeStatus(2)">Trưa</a></li>
+					<li><a data-toggle="tab" href="#menu2"  onClick="changeStatus(3)" >Tối</a></li>
 				</ul>
 
 				<div class="tab-content list_room">
-					<div id="home" class="tab-pane fade in active l_room">
+					<div id="home" class="tab-pane fade in active l_room" >
 						<h4>Phòng VIP</h4>
-						<ul id="tbs-list">
+						<ul id="tbs-list1">
 						
 						</ul>
 						
 					</div>
 					<div id="menu1" class="tab-pane fade l_room">
 						<h4>Phòng VIP</h4>
-						<ul id="tbc-list">
+						<ul id="tbs-list2">
 							
 						</ul>
 						<h4>Bàn</h4>
@@ -437,7 +439,7 @@
 					</div>
 					<div id="menu2" class="tab-pane fade l_room">
 						<h4>Phòng VIP</h4>
-						<ul id="tbt-list">
+						<ul id="tbs-list3">
 							
 						</ul>
 						<h4>Bàn</h4>
@@ -463,11 +465,9 @@
 			jQuery('#banText').val(banText);
 			jQuery('#listbandat').modal('hide');
         });
-	// function myFunction() {
-	// 	var ban = $(this).val();
-	// 	jQuery('#ban').val(ban);
-	// 	jQuery('#listbandat').modal('hide');
-	// };
+		changeStatus=(e)=>{
+			jQuery('#time_order').val(e);
+		}
 	$("#tim").click(function (e) {
             $.ajaxSetup({
                 headers: {
@@ -475,6 +475,8 @@
                 }
             });
             e.preventDefault();
+			jQuery('#order_date').val(jQuery('#date_b').val());
+
             var formData = {
                 date_b: jQuery('#date_b').val(),
             };
@@ -488,29 +490,34 @@
                 dataType: 'json',
                 success: function (data) {
 					console.log(data);
-					var date_b= jQuery('#date_b').val();
-					// forEach(data, function(tb){
-					// 	var link = "<li><a href='#'>"+tb.name_table+"</a></li>";
-					// jQuery('#tb-list').append(link);
-					// });
+					var link1='';
+						var link2='';
+						var link3='';
 					$.each(data, function(i, value){
-						var link = "<li><button class='btn-chon form-control' id='chon'  value='"+value.id+"'>"+value.name_table+"</button></li>";
-						if((value.order_date!=date_b) | (value.order_date==null))
-						{
-							jQuery('#tbs-list').append(link);
-							jQuery('#tbt-list').append(link);
-							jQuery('#tbc-list').append(link);
+						if(value.book_table.some((item)=>item.time_order===1)){
+							// continue;
 						}
-						if((value.status==0)& (value.order_date==date_b) )
-						{
-							jQuery('#tbs-list').append(link);
+						else{
+							link1 += "<li><button class='btn-chon form-control' id='chon'  value='"+value.id+"'>"+value.name_table+"</button></li>";
 						}
-						if((value.status==1)& (value.order_date==date_b) )
-						{
-							jQuery('#tbc-list').append(link);
+						if(value.book_table.some(item=>item.time_order===2)){
+							// continue;
 						}
-			
-					});
+						else{
+							link2 += "<li><button class='btn-chon form-control' id='chon'  value='"+value.id+"'>"+value.name_table+"</button></li>";
+						}
+						
+						if(value.book_table.some(item=>item.time_order===3)){
+							// continue;
+						}else{
+							link3 += "<li><button class='btn-chon form-control' id='chon'  value='"+value.id+"'>"+value.name_table+"</button></li>";
+
+						}
+					})
+					$('#tbs-list1').html(link1)
+					$('#tbs-list2').html(link2)
+					$('#tbs-list3').html(link3)
+					
                 },
                 error: function (data) {
                     console.log('Error:', data);

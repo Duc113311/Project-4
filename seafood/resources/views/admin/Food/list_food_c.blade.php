@@ -148,12 +148,6 @@
                                                 <button class="mt-1 mb-1 btn btn-button-1" id="btnChooseImage">Choose image</button>
                                                 <div id="show_image"></div>
                                             </div>
-                                    <!-- <div class="form-group">
-                                        <label for="">Ảnh:</label>
-                                        <input type="text" name="Image" id="Image" class="form-control" readonly>
-                                        <button class="mt-1 mb-1 btn btn-button-1" id="btnChooseImage">Choose image</button>
-                                        <div id="show_image"></div>
-                                    </div> -->
                                 </div>
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label for="select" class="form-control-label">Đơn Giá</label>
@@ -163,6 +157,7 @@
                                             aria-invalid="false">
                                     </div>
                                 </div>
+                               
                             </div>
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary btn-sm" id="btnThem">
@@ -216,10 +211,7 @@
                                 <div class="col-12 col-md-9">
                                     <select name="idparent" id="idparent_edit" class="form-control">
                                         @foreach($cate as $key=>$item)
-                                        @if($item->id==$item->idparent){
                                             <option value="{{$item->id}}">{{$item->name_menu}}</option>
-                                        }
-                                        @endif
                                         @endforeach
                                     </select>
                                 </div>
@@ -232,12 +224,7 @@
                                             <button class="mt-1 mb-1 btn btn-button-1" id="btnChooseImageEdit">Choose image</button>
                                             <div id="show_image_edit"></div>
                                         </div>
-                                <!-- <div class="form-group">
-                                    <label for="">Ảnh:</label>
-                                    <input type="text" name="Image" id="Image" class="form-control" readonly>
-                                    <button class="mt-1 mb-1 btn btn-button-1" id="btnChooseImage">Choose image</button>
-                                    <div id="show_image"></div>
-                                </div> -->
+                              
                             </div>
                             <div class="row form-group">
                                 <div class="col col-md-3"><label for="select" class="form-control-label">Đơn Giá</label>
@@ -320,6 +307,7 @@
 
             //Click thêm
             $('#btnThem').off('click').on('click', function(event) {
+                
                 event.preventDefault();
                 food.AddFood();
             });
@@ -327,9 +315,11 @@
             //Click update sản phẩm
             $(document).off('click', '#btnSua').on('click', '#btnSua', function(event) {
                 event.preventDefault();
+              
                 var id = $('#food_id').val();
                 if(id != "")
                 {
+                    
                     var url = `/update_food/${id}`;
                     food.UpdateFood(url);
                 }
@@ -358,14 +348,8 @@
             //Click edit sản phẩm
             $(document).off('click','.btnEdit').on('click','.btnEdit',function(event) {
                 var url = $(this).data('url');
-                // var options = $('#idparent_edit option');
-                // $.each(options, function(index, value) {
-                //     var id_parent = value;
-                    // console.log(id_parent);
-                    
-                });
-                // if(url != "")
-                //     food.EditFood(url);
+                if(url != "")
+                    food.EditFood(url);
             });
         },
         AddFood: function() {
@@ -400,6 +384,7 @@
             });
         },
         EditFood: function(url) {
+           
             $.ajax({
                 url: url,
                 type:'GET',

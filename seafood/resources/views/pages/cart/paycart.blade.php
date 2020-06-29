@@ -36,26 +36,26 @@
                             @endif
                             <p class="form-kh">
                                 <label for="">Họ và tên *</label>
-                                <input class="txt" type="text" name="name" id="name" placeholder="Nhập tên">
+                                <input class="txt" type="text" name="name_cus" id="name_cus" placeholder="Nhập tên">
                             </p>
                             <p class="form-kh">
                                 <label for="">Địa chỉ *</label>
-                                <input class="txt" type="text" name="address" id="address" placeholder="Nhập tên">
+                                <input class="txt" type="text" name="address" id="address" placeholder="Nhập địa chỉ">
                             </p>
                             <p class="form-kh1">
                                 <label for="">Số điện thoại *</label>
-                                <input class="txt" type="text" name="phone" id="phone" placeholder="Nhập tên">
+                                <input class="txt" type="text" name="phone" id="phone" placeholder="Nhập số điện thoại">
                             </p>
                             <p class="form-kh1" style="float: right;">
                                 <label for="">Email *</label>
-                                <input class="txt" type="text" name="email" id="email" placeholder="Nhập tên">
+                                <input class="txt" type="text" name="email" id="email" placeholder="Nhập email">
                             </p>
                             <p class="form-kh1">
-                                <label for="">Ngày đặt *</label>
+                                <label for="">Ngày nhận*</label>
                                 <input type="date" name="date" class="txt" id="date">
                             </p>
                             <p class="form-kh1" style="float: right;">
-                                <label for="">Giờ đặt *</label>
+                                <label for="">Giờ ăn *</label>
                                 <input type="time" class="txt" name="time" id="time">
                                                             </p>
                         </div>

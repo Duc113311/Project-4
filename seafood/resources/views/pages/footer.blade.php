@@ -24,12 +24,7 @@
 				
 				<div class="col-md-4 w3_footer_grid">
 					<h3>FANPAGE FACEBOOK</h3>
-					<ul class="info"> 
-						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="products.html">Store</a></li>
-						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="checkout.html">My Cart</a></li>
-						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="login.html">Login</a></li>
-						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="registered.html">Create Account</a></li>
-					</ul>
+					<img src="{{asset('fontend/images/face.PNG')}}" alt="" srcset="">
 				</div>
 				<div class="clearfix"> </div>
 			</div>

@@ -64,7 +64,7 @@
                                         </td>
                                         <td>
                                             <img width="50px;"
-                                                src="{{URL::to('/fontend/images/'.$item['categoryInfo']->image)}}">
+                                                src="{{URL::to(''.$item['categoryInfo']->image)}}">
 
                                         </td>
                                         <td>{{$item['categoryInfo']->name_menu}} </td>

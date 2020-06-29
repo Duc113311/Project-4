@@ -88,7 +88,7 @@
                 </tbody>
             </table>
             <div class="cart_checkout">
-                <a href="#" class="check_button">
+                <a href="{{URL::to('/gio-hang/thanh_toan')}}" class="check_button">
                     TIẾN HÀNH THANH TOÁN
                 </a>
             </div>

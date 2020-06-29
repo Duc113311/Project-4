@@ -1,3 +1,17 @@
+@section('css')
+<!-- CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+<!-- Default theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
+<!-- Semantic UI theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css" />
+<!-- Bootstrap theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
+
+
+<link rel="stylesheet" href="{{url('sweetalert/package/dist/sweetalert2.min.css')}}" />
+
+@endsection
 <div class="agileits_header">
 		<div class="container">
 			<div class="w3l_offers">
@@ -8,13 +22,7 @@
 					<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 					<li><a href="#"> <i class="fa fa-youtube" aria-hidden="true"></i></a></li>
 					<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-					<!-- @if(Session::has('cus_name')!=null)
-					<li><a href="{{route('logout')}}"  >Đăng xuất</a></li>
-					<li>Chào, {{Session::get('cus_name')}}</li>
-					@else
-					<li><a href="#" data-toggle="modal" data-target="#reginter" >Đăng ký</a></li>
-					<li><a href="#" data-toggle="modal" data-target="#loginuser" >Đăng nhập</a></li>
-					@endif -->
+					
 					@if(Auth::check())
 					<li><a href="{{route('logout')}}"  >Đăng xuất</a></li>
 					<li>Chào,{{Auth::user()->name}}</li>
@@ -22,7 +30,7 @@
 					<li><a href="#" data-toggle="modal" data-target="#reginter" >Đăng ký</a></li>
 					<li><a href="#" data-toggle="modal" data-target="#loginuser" >Đăng nhập</a></li>
 					@endif
-					<li><a href="#" >Giỏ Hàng</a></li>
+					<li><a href="#" >Đơn Hàng</a></li>
 					<li>
 						<a href="#" class="shop_cart" type="submit" name="submit" value="">
 							<i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
@@ -44,7 +52,7 @@
 										<div class="food_list">
 											<div class="deatil_item1">
 												<a href="#">
-													<img src="{{URL::to('/fontend/images/'.$item['categoryInfo']->image)}}"
+													<img src="{{URL::to(''.$item['categoryInfo']->image)}}"
 														width="100px" alt="" srcset="">
 												</a>
 											</div>
@@ -72,9 +80,9 @@
 									<span class="title_tcong">Tổng cộng</span>
 									<span class="price">{{number_format(Session::get("Cart")->totailPrice)}}₫</span>
 								</div>
-								@else{
-									<h2 id="xoacarrt">Không có sản phẩm</h2>
-								}
+								@else
+									<h5 style="padding: 10px;text-align: center;font-size: 16px;" id="xoacarrt">Không có sản phẩm</h5>
+								
 								@endif
 
 							</div>
@@ -107,8 +115,8 @@
 				</a></h1>
 		</div>
 		<div class="w3l_search">
-			<form action="#" method="post">
-				<input type="search" name="Search" placeholder="Nhập thông tin món ăn...." required="">
+			<form action="{{URL::to('/search')}}" method="get">
+				<input type="search" name="result" placeholder="Nhập thông tin món ăn...." required="">
 				<button type="submit" class="btn btn-default search" aria-label="Left Align">
 					<i class="fa fa-search" aria-hidden="true"> </i>
 				</button>
@@ -196,40 +204,32 @@
 <div class="modal fade" id="reginter" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content" style="width: 61%;">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Đăng ký thông tin</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
       <div class="modal-body">
-	 
+	 <div style="text-align: center; padding: 4px;"> 
+		 <h4>Đăng ký thông tin</h4>
+	 </div>
 			<div class="login-form-grids">
 								@if(Session::has('mess')!=null)
 								<div class="alert alert-success">{{Session::get('mess')}}</div>
 								@endif
-					<form action="{{route('register')}}" method="post">
-                    {{@csrf_field()}}
-                    <input type="text" placeholder="First Name..." name="name" required=" " style="margin-bottom: 15px;">
+					<form action="" method="post" id="register_">
+					{{ csrf_field()}}
+                    <input type="text" placeholder="Nhập tên....." name="name" id="name" required=" " style="margin-bottom: 15px;">
                   
-					<input type="email" placeholder="Email Address" required=" " name="email">
+					<input type="email" placeholder="Nhập email...." required=" " name="email" id="email">
                    
-					<input type="password" placeholder="Password" required=" " name="password">
+					<input type="password" placeholder="Nhập mật khẩu..." required=" " name="password" id="password">
                    
-					<input type="password" placeholder="Password Confirmation" required=" " name="re_password">
+					<input type="password" placeholder="Nhập lại mật khẩu..." required=" " name="re_password" id="re_password">
                    
 					<div class="register-check-box">
 						<div class="check">
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i> </i>Tôi châp nhận các điều khoản và điều kiện</label>
+							<label style="color: #4A2625 !important;" class="checkbox"><input type="checkbox" name="checkbox"><i> </i>Tôi châp nhận các điều khoản và điều kiện</label>
 						</div>
 					</div>
-					<button type="submit" class="btn btn-secondary"  >Đăng ký</button>
+					<button style="width: 100%;margin-top: 16px;" type="submit" class="btn btn-primary" id="btndangky">Đăng ký</button>
 				</form>
 			</div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal" >Đăng ký</button>
-        <button type="button" class="btn btn-primary">Đóng</button>
       </div>
     </div>
   </div>
@@ -241,36 +241,120 @@
 <div class="modal fade" id="loginuser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content" style="width: 61%;">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Đăng nhập thông tin</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
       <div class="modal-body">
-	 
+	  <div style="text-align: center; padding: 4px;"> 
+		 <h4>Đăng nhập thông tin</h4>
+	 </div>
 			<div class="login-form-grids">
 			
-					<form action="{{route('login')}}" method="post">
-                   	@csrf
-					<input type="email" placeholder="Email Address" required=" " name="email">
+					<form action="" method="post">
+					{{ csrf_field()}}
+					<input type="email" placeholder="Email Address" required=" " name="email" id="iemail">
                    
-					<input type="password" placeholder="Password" required=" " name="password">
+					<input type="password" placeholder="Password" required=" " name="password" id="ipassword">
                    
 					<div class="register-check-box">
 						<div class="check">
 							<label class="checkbox"><input type="checkbox" name="checkbox"><i> </i>Tôi châp nhận các điều khoản và điều kiện</label>
 						</div>
 					</div>
-					<button type="submit" class="btn btn-secondary"  >Đăng nhập</button>
-
+					
+					<button style="width: 100%;margin-top: 16px;" type="submit" class="btn btn-primary" id="btnDangnhap">Đăng nhập</button>
 				</form>
 			</div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal" >Đăng nhập</button>
-        <button type="button" class="btn btn-primary">Đóng</button>
       </div>
     </div>
   </div>
 </div>
+@section('js')
+<script src="{{url('editor/ckeditor/ckeditor.js')}}"></script>
+<script src="{{url('editor/ckfinder/ckfinder.js')}}"></script>
+
+<script src="{{url('sweetalert/package/dist/sweetalert2.min.js')}}"></script>
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+<script type="text/javascript">
+    var tk_user={
+		init:function(){
+			tk_user.registersEvent();
+		},
+		registersEvent:function(){
+			$('#btndangky').off('click').on('click',function(envet){
+				event.preventDefault();
+				tk_user.Addangky();
+			});
+			$('#btnDangnhap').off('click').on('click',function(envet){
+				event.preventDefault();
+				tk_user.AddDangnhap();
+			});
+		},
+	Addangky:function()
+	{
+		var url="{!!route('dangky')!!}";
+		$.ajax({
+			url:url,
+			type:'POST',
+			dataType:'json',
+			data:{
+				"_token": "{{ csrf_token() }}",
+				name:$('#name').val(),
+				email:$('#email').val(),
+				password:$('#password').val(),
+				re_password:$('#re_password').val()
+			},
+			success:function(data)
+			{
+				
+				if(data.status===true){
+					alertify.success("Đăng ký thành công");
+					$('#reginter').modal('hide');
+				}
+				else{
+					alertify.error(data.message);
+				}
+
+			},
+			error:function(err)
+			{
+				console.log(err);
+			}
+		});
+	},
+
+	AddDangnhap:function()
+	{
+		var url="{!!route('login')!!}";
+		$.ajax({
+			url:url,
+			type:'POST',
+			dataType:'json',
+			data:{
+				"_token": "{{ csrf_token() }}",
+				email:$('#iemail').val(),
+				password:$('#ipassword').val()
+			},
+			success:function(data)
+			{
+				
+				if(data.status===false){
+					alertify.error(data.message);
+				}
+				else{
+					alertify.success("Đăng nhập thành công");
+					
+					setTimeout(function() {
+                            window.location.reload();
+							$('#loginuser').modal('hide');
+                        }, 1000);
+				}
+				
+			},
+			error:function(err)
+			{
+				console.log(err);
+			}
+		});
+	}
+	};
+	tk_user.init();
+</script>
+@endsection

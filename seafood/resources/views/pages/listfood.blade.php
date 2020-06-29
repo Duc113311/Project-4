@@ -116,7 +116,7 @@
 										<div class="snipcart-item block">
 											<div class="snipcart-thumb">
 												<a href="single.html"><img title=" " alt=" "
-														src="{{URL::to('/fontend/images/'.$ite->image)}}"></a>
+														src="{{URL::to(''.$ite->image)}}"></a>
 												<a href="{{URL::to('/chitietfood/'.$ite->id)}}">
 													<p>{{$ite->name_menu}}</p>
 												</a>

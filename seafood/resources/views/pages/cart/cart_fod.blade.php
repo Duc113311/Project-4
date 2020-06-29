@@ -6,7 +6,7 @@
         <div class="food_list">
             <div class="deatil_item1">
             <a href="#">
-                <img src="{{URL::to('/fontend/images/'.$item['categoryInfo']->image)}}" width="100px" alt="" srcset="">
+                <img src="{{URL::to(''.$item['categoryInfo']->image)}}" width="100px" alt="" srcset="">
             </a>
             </div>
             <div class="deatil_item">

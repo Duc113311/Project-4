@@ -1,9 +1,8 @@
  <!-- Left Panel -->
-
- <aside id="left-panel" class="left-panel">
+    <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
 
-            <div class="navbar-header">
+        <div class="navbar-header">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
@@ -12,37 +11,46 @@
             </div>
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active">
+                <li class="active">
                         <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Trang chủ</a>
                     </li>
                     <h3 class="menu-title">Món Ăn</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Quản lý thực đơn</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="{{route('dsfood')}}">Data Table</a></li>
-                           
+                            <li><i class="fa fa-table"></i><a href="{{route('dsfood')}}">List Thực Đơn</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{route('view_create')}}">Thêm Loại</a></li>
                         </ul>
                     </li>
-                    <h3 class="menu-title">Tài khoản</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">Nguyên Liệu</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Quản lý thực đơn</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="taikhoan.html">List tài khoản</a></li>
-                           
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Quản lý Nguyên liệu</a>
+                        <ul class="sub-menu children dropdown-menu">view_create_t
+                            <li><i class="fa fa-table"></i><a href="{{route('get_res')}}">List Nguyên Liệu</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{route('view_create_t')}}">Thêm Loại Nguyên Liệu</a></li>
                         </ul>
                     </li>
-                    <h3 class="menu-title">Trạng Thái Đơn Hàng</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">Đơn Hàng</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Quản lý thực đơn</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Đơn hàng online</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="donhangxacnhan.html">Đã xác nhận</a></li>
-                            <li><i class="fa fa-table"></i><a href="taikhoan.html">Đã nấu xong</a></li>
-                            <li><i class="fa fa-table"></i><a href="taikhoan.html">Đang vận chuyển</a></li>
-                            <li><i class="fa fa-table"></i><a href="taikhoan.html">Đã Hủy Đơn</a></li>
-                           
+                            <li><i class="fa fa-table"></i><a href="{{route('getxacnhan')}}">Đơn hàng chờ xác nhận</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{route('get_xacnhandon')}}">Đã xác nhận</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{route('get_chebienxong')}}">Đã chế biến xong</a></li>
+                            <li><i class="fa fa-table"></i><a href="taikhoan.html">Đơn hàng đang giao</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{route('get_huy')}}">Đơn hàng hủy</a></li>
+                        </ul>
+                    </li>
+                    <h3 class="menu-title">Đặt Bàn</h3><!-- /.menu-title -->
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Quản Lý Đặt bàn</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="fa fa-table"></i><a href="{{route('view_table_dat')}}">Bàn Chưa Xác Nhận</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{route('view_tb_xn')}}">Bàn Đã Xác Nhận</a></li>
                         </ul>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
+        </nav>
         </nav>
     </aside><!-- /#left-panel -->

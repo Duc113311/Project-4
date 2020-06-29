@@ -1,6 +1,8 @@
 .navigation-agileits {
     background: #21013a !important;
 }
+
+
 .agileits_header {
     background: #2e12cc69 !important;
     padding: 1px 0 !important;
@@ -231,7 +233,7 @@
         .order__area .order-form .bk-datban ul li{
             float: left;
     width: 50%;
-    margin-bottom: 10px;
+    margin-bottom: 7px;
         }
         .order__area .order-form .bk-datban ul li input{
             width: 91%;
@@ -261,15 +263,20 @@
             border: 1px solid #c3840c;
             width: 95.5%;
         }
+        .body_cart_cancel .body_f_ct_don .ct_img_cart {
+            float: left;
+            margin-right: 18px;
+        }
         .order__area .order-form .bk-datban ul li button.book_table{
             background: #890802;
             padding: 10px 15px;
-            min-width: 120px;
+            min-width: 258px;
             color: #ffffff;
             font-weight: 700 !important;
-            font-size: 14px;
-            border: navajowhite;
+            font-size: 18px;
             border-radius: 3px;
+            border: 2px solid #67dc41;
+            margin-top: -9px;
         }
         .nav-tabs > li {
             width: 21% !important;
@@ -279,7 +286,7 @@
         background: url(../images/bg-dat-ban.png) no-repeat center;
         background-size: 100%;
         padding: 209px 0;
-        width: 59%;
+        width: 100%;
     }
     .list_room{
         padding: 21px 11px;
@@ -591,7 +598,7 @@ margin-bottom: 10px;
 .agileits_header .agile-login span.cart-badge{
     position: absolute;
     top: 2px;
-    right: 131px;
+    right: 144px;
     color: #fff;
     background-color: #ca3d26;
     width: 20px;
@@ -1000,6 +1007,62 @@ float: left;
     width: 100%;
     padding: .625rem 0;
 }
-.body_cart_cancel .title_cart_c h4{
+
+
+/* Bình luân */
+
+.products .cm_sp{
+    padding: 14px;
+    margin-bottom: 33px;
+    margin-top: 33px;
+}
+
+.products .cm_sp .com_c{
+    width: 50%;
+    padding: 11px 11px;
+}
+.products .cm_sp .com_c label{
+    display: flex;
+    margin-bottom: 11px;
+}
+.products .cm_sp .com_c .in_p{
+    width: 100%;
+    border: 1px solid #948cb785
+}
+.products .cm_sp .com_put{
+    width: 50%;
+    padding: 11px 11px;
+    text-align: right;
+
+   
+}
+.products .cm_sp_c{
+    padding: 14px;
+    margin-bottom: 33px;
+    margin-top: 33px;
+    background: aliceblue;
+    border-bottom: 1px solid #9998ce96;
+}
+.products .cm_sp .com_put .in_p_gui{
+    width: 20%;
+    color: black;
+    background: #dada18;
+    border: navajowhite;
+}
+.cm_sp_ct .name_us{
+    width: 14%;
+    padding: 7px;
+    float: left;
+}
+.cm_sp_ct .date_cm{
+    width: 100%;
+    padding: 7px;
+}
+
+.cm_sp_ct .ct_cm_nd{
+    width: 100%;
+    padding: 7px;
+}
+.cm_sp_ct p{
 
 }

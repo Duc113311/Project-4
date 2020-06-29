@@ -8,3 +8,35 @@ aside.left-panel {
 .navbar .navbar-nav li.menu-item-has-children .sub-menu {
     background: #06294c !important;
 }
+.ctdonhang{
+
+}
+.ctdonhang div.card{
+    
+}
+.ctdonhang div.card .form_body{
+    border: 1px solid;
+    padding: 10px 10px;
+}
+.ctdonhang div.card .form_body .title_hd{
+text-align: center;
+}
+.ctdonhang div.card .form_body .body_content{
+
+}
+.ctdonhang div.card .form_body .body_content .time_start{
+
+}
+.ctdonhang div.card .form_body .body_content .list_content{
+
+}
+.ctdonhang div.card .form_body .body_content .list_content{
+
+}
+.ctdonhang div.card .form_body .name_nv{
+
+}
+.ctdonhang div.card .form_body .ghichu{
+    text-align: center;
+    margin-top: 6px;
+}
