@@ -13,9 +13,19 @@ use Illuminate\Support\Facades\Redirect;//Trả về cái j đó
 session_start();
 class CategoryFood extends Controller
 {
+    public function thong_ke()
+    {
+        $orderYear = DB::table('f_order')
+                    ->select(DB::raw('month(date) as getYear'), DB::raw('SUM(totail) as value'))
+                    ->groupBy('getYear')
+                    ->orderBy('getYear', 'ASC')
+                    ->get();
+                   
+        return view('admin.thongke.thongke', compact('orderYear'));
+    }
    public function getFood()
    {
-       return view('admin_layout');
+    return view('admin_layout');
    }
 
     protected $cates=array();

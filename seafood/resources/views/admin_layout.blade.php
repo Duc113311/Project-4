@@ -17,19 +17,20 @@
 
     <!-- Right Panel -->
 
+    
     <div id="right-panel" class="right-panel">
-
       @include('admin.general.menutop')
 
       @yield('content')
     </div><!-- /#right-panel -->
 
     <!-- Right Panel -->
-
+    
     @include('admin.general.js')
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
     @yield('js')
+  
 </body>
 
 </html>

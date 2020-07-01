@@ -16,8 +16,10 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+// Route::get('/tk','CategoryFood@tk');
 Route::get('/','HomeController@index')->name('trangchu');
-
+//Thoosng ke
+Route::get('/thongke','CategoryFood@thong_ke')->name('thongk');
 
 Route::get('/homes','CategoryFood@getFood');
 Route::get('/homes1','CategoryFood@getContentFood');
@@ -41,8 +43,13 @@ Route::post('/addres','ResourcesController@creat_res')->name('creat_reso');
 Route::get('/edit_res/{id}','ResourcesController@eidt_res')->name('edit_res');
 Route::put('/update_res/{id}','ResourcesController@updateres')->name('update');
 Route::get('/delete_res/{id}','ResourcesController@deleteres')->name('delete');
+//Tin Tưc
+Route::get('/View_list_news','NewFoodController@getlistnew')->name('list_news');
 
-
+Route::post('/add_news','NewFoodController@create_news')->name('create_n');
+Route::get('/edit_news/{id}','NewFoodController@edit_news')->name('edit_n');
+Route::put('/update_news/{id}','NewFoodController@update_news')->name('update_n');
+Route::get('/delete_news/{id}','NewFoodController@delete_news')->name('delete');
 //Đơn hàng.
 Route::get('/chuaxacnhan','CartController@getDonHang')->name('getxacnhan');
 Route::get('/huydonhang/{id}','CartController@getconfim');
@@ -88,23 +95,19 @@ Route::post('/login_customer','UserController@login_customer')->name('login_cust
 Route::post('/login_use','UserController@login')->name('login');
 
 //Login_admin
-Route::group(['prefix'=>'login_a','middleware'=>'CheckLoginIn'],function(){
+Route::group(['prefix'=>'login_a'],function(){
     Route::get('/Login_admin','UserController@getLoginAdmin');
     Route::post('/Login_admin','UserController@postLogin')->name('name_login');
 });
-Route::group(['prefix'=>'logout_a','middleware'=>'CheckLogOut'],function(){
+Route::group(['prefix'=>'logout_a'],function(){
 Route::get('/Logout_admin','UserController@getLogout');
 });
 //Gửi Mail
 
 //logout
 Route::get('/logout','UserController@logout')->name('logout');
-
 //Đăng ký tài khoản
-
 Route::post('/_register','UserController@register_dk')->name('dangky');
-
-
 // Thanh toán
 Route::group(['prefix'=>'gio-hang','middleware'=>'web'],function()
 {
@@ -117,9 +120,14 @@ Route::get('/trang_thai_don/{id}','CartController@distroy_order_cus');
 //Sản phẩm bán chạy
 
 // Đặt bàn
-Route::post('/a','HomeController@Booktable')->name('dat_book');
+Route::post('/datban','HomeController@Booktable')->name('dat_book');
 
 //Bàn ăn uống
 Route::get('/list_room','TableController@getRoom')->name('show_table');
 
 Route::post('/table','HomeController@gettable_book')->name('gettb');
+
+//Tin tức đồ ăn
+
+Route::get('/list_news','NewFoodController@getallnew')->name('show_new');
+

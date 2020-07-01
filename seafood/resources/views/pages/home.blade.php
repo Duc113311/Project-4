@@ -142,8 +142,7 @@
 											<div class="hover14 column">
 												<div class="agile_top_brand_left_grid">
 													<div class="agile_top_brand_left_grid_pos">
-														<img src="fontend\images\offer.jpg" alt=" "
-															class="img-responsive" />
+														
 													</div>
 													<div class="agile_top_brand_left_grid1">
 														<figure>
@@ -272,29 +271,28 @@
 		<div class="row">
 			<div class="col-md-7">
 				<div class="order-form" style="padding: 0px 23px;">
-				<form action="{{ route('dat_book') }}" method="post">
-				@csrf
+				<form action="" method="post" id="btn_ban_c">
+				{{ csrf_field()}}
 					<div class="bk-datban">
-
 						<img class="wp-image-1055" src="fontend\images\title-form-datban.png" alt="" srcset="">
 						<div class="ds"
 							style="width: 100%;padding: 16px 53px;margin: 0 auto;margin-top: 11em;padding-right: 33px;">
 							<ul>
 								<li>
-									<input type="text" name="name_customer" id="" placeholder="Họ tên">
+									<input type="text" name="name_customer" id="name_customer" placeholder="Họ tên">
 								</li>
 								<li>
-									<input type="email" name="email" id="" placeholder="Email">
+									<input type="email" name="email" id="email_kh" placeholder="Email">
 								</li>
 								<li>
-									<input type="tel" name="phone_number" id="" placeholder="Số điện thoại">
+									<input type="tel" name="phone_number" id="phone_number" placeholder="Số điện thoại">
 								</li>
 								
 								<li>
-									<input type="text" name="min_price" id="" placeholder="Mức giá ăn">
+									<input type="text" name="min_price" id="min_price" placeholder="Mức giá ăn">
 								</li>
 								<li>
-									<select name="Number_customer" id="" class="n_cus">
+									<select name="Number_customer" id="Number_customer" class="n_cus">
 										<option value="">Số khách</option>
 										<option value="1 đến 5 người">1 đến 5 người</option>
 										<option value="5 đến 10 người">5 đến 10 người</option>
@@ -312,16 +310,16 @@
 									
 								</li>
 								<li style="float: left;width: 100%;margin-bottom: 10px;">
-									<textarea class="ghichu" name="Note" id="" placeholder="Ghi chú"></textarea>
+									<textarea class="ghichu" name="Note" id="Note" placeholder="Ghi chú"></textarea>
 								</li>
 								<li>
-									<input type="hidden" name="order_date" id="order_date" placeholder="Ngày ăn">
+									<input type="hidden" name="order_date" id="order_date_v" placeholder="Ngày ăn">
 								</li>
 								<li>
 									<input type="hidden" name="time_order" id="time_order">
 								</li>
 								<li style="width: 100%;text-align: center;">
-									<button type="submit" class="book_table">Đặt bàn</button>
+									<button type="submit" class="book_tables" id="btnBookTable">Đặt bàn</button>
 								</li>
 							</ul>
 						</div>
@@ -344,57 +342,23 @@
 	<div class="container">
 		<h3>TIN TỨC MỚI</h3>
 		<div class="agile_top_brands_grids">
+		@foreach($tintuc_n as $item)
 			<div class="col-md-4">
 				<div class="img-news">
-					<img src="fontend\/images\giadinh news.jpg" alt="">
+					<img src="{{asset(''.$item->image_news)}}" alt="">
 				</div>
 				<div class="content">
 					<div class="content-title">
-						<h6>7 lợi ích "đáng nể" của hải sản</h6>
+						<h6>{{$item->title_news}}</h6>
 					</div>
 					<div class="content-bg">
-						<p>Hải sản thực sự tốt cho sức khỏe, vì chứa nhiều vitamin
-							và khoáng chất tự nhiên...Dưới đây là những lợi ích "đáng nể"
-							của hải sản......
+						<p>{{$item->content_news}}
 						</p>
 					</div>
 				</div>
 
 			</div>
-			<div class="col-md-4">
-				<div class="img-news">
-					<img src="fontend\/images\tre an haisan neww.jpg" alt="">
-				</div>
-				<div class="content">
-					<div class="content-title">
-						<h6>Mách cho bạn cách cho trẻ ăn hải sản không bị dị ứng</h6>
-					</div>
-					<div class="content-bg">
-						<p>Hải sản là một loại thực phẩm được yêu thích
-							chưa nhiều chất dinh dưỡng tốt cho sức khỏe và
-							sự phát triển của trẻ.....
-						</p>
-					</div>
-				</div>
-
-			</div>
-			<div class="col-md-4">
-				<div class="img-news">
-					<img src="fontend\/images\trungca new.jpg" alt="">
-				</div>
-				<div class="content">
-					<div class="content-title">
-						<h6>Những giá trị dinh dưỡng của trứng cá mà bạn chưa biết</h6>
-					</div>
-					<div class="content-bg">
-						<p>Không phải ai cũng biết bụng cá chứa một số thành phần dinh dưỡng
-							còn cao hơn cả thịt cá. Trong bụng cá có chứa bộ phận
-							sinh sản là trứng cá
-							giàu vitamin A, D, B, canxi…
-						</p>
-					</div>
-				</div>
-			</div>
+		@endforeach
 		</div>
 	</div>
 </div>
@@ -455,6 +419,153 @@
 		</div>
 	</div>
 </div>
+@endsection
+@section('js')
+
+<script src="{{url('editor/ckeditor/ckeditor.js')}}"></script>
+<script src="{{url('editor/ckfinder/ckfinder.js')}}"></script>
+
+<script src="{{url('sweetalert/package/dist/sweetalert2.min.js')}}"></script>
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+<script type="text/javascript">
+  var tk_user={
+		init:function(){
+			tk_user.registersEvent();
+		},
+		registersEvent:function(){
+			$('#btnBookTable').off('click').on('click',function(envet){
+				event.preventDefault();
+				tk_user.AddTable();
+				
+			});
+		},
+		AddTable:function()
+		{
+		var url="{{ route('dat_book') }}";
+		$.ajax({
+			url:url,
+			type:'POST',
+			dataType:'json',
+			data:{
+				"_token": "{{ csrf_token() }}",
+				name_customer:$('#name_customer').val(),
+				email:$('#email_kh').val(),
+				phone_number:$('#phone_number').val(),
+				Number_customer:$('#Number_customer').val(),
+				ban:$('#ban').val(),
+				order_date:$('#date_b').val(),
+				time_order:$('#time_order').val(),
+				min_price:$('#min_price').val(),
+				Note:$('#Note').val()
+			},
+			
+			success:function(data)
+			{
+				if(data.status===true){
+					alertify.success("Đặt Bàn thành công");
+					$("#btn_ban_c").trigger("reset");
+				}
+				else{
+					alertify.error(data.message);
+				}
+			},
+			error:function(err)
+			{
+				console.log(err);
+			}
+		});
+	  },
+	};
+	tk_user.init();
+</script>
+<script type="text/javascript">
+
+    var kk_users={
+		init:function(){
+			kk_users.registersEvent();
+		},
+		registersEvent:function(){
+			$('#btndangky').off('click').on('click',function(envet){
+				
+				event.preventDefault();
+				
+				kk_users.Addangky();
+			});
+			$('#btnDangnhap').off('click').on('click',function(envet){
+				event.preventDefault();
+				kk_users.AddDangnhap();
+			});
+		},
+	Addangky:function()
+	{
+		
+		var url="{!!route('dangky')!!}";
+		$.ajax({
+			url:url,
+			type:'POST',
+			dataType:'json',
+			data:{
+				"_token": "{{ csrf_token() }}",
+				name:$('#name').val(),
+				email:$('#email').val(),
+				password:$('#password').val(),
+				re_password:$('#re_password').val()
+			},
+			success:function(data)
+			{
+				
+				if(data.status===true){
+					alertify.success("Đăng ký thành công");
+					$('#reginter').modal('hide');
+				}
+				else{
+					alertify.error(data.message);
+				}
+
+			},
+			error:function(err)
+			{
+				console.log(err);
+			}
+		});
+	},
+
+	AddDangnhap:function()
+	{
+		var url="{!!route('login')!!}";
+		$.ajax({
+			url:url,
+			type:'POST',
+			dataType:'json',
+			data:{
+				"_token": "{{ csrf_token() }}",
+				email:$('#iemail').val(),
+				password:$('#ipassword').val()
+			},
+			success:function(data)
+			{
+				if(data.status===false){
+					alertify.error(data.message);
+				}
+				else{
+					alertify.success("Đăng nhập thành công");
+					
+					setTimeout(function() {
+                            window.location.reload();
+							$('#loginuser').modal('hide');
+                        }, 1000);
+				}
+				
+			},
+			error:function(err)
+			{
+				console.log(err);
+			}
+		});
+	}
+	};
+	kk_users.init();
+</script>
 <script>
 	jQuery('body').on('click', '.btn-chon', function () {
 
@@ -498,19 +609,19 @@
 							// continue;
 						}
 						else{
-							link1 += "<li><button class='btn-chon form-control' id='chon'  value='"+value.id+"'>"+value.name_table+"</button></li>";
+							link1 += `<li><button class='btn-chon form-control' id='chon'  value='"${value.id}"'>${value.name_table}</button></li>`;
 						}
 						if(value.book_table.some(item=>item.time_order===2)){
 							// continue;
 						}
 						else{
-							link2 += "<li><button class='btn-chon form-control' id='chon'  value='"+value.id+"'>"+value.name_table+"</button></li>";
+							link2 += `<li><button class='btn-chon form-control' id='chon'  value='"${value.id}"'>${value.name_table}</button></li>`;
 						}
 						
 						if(value.book_table.some(item=>item.time_order===3)){
 							// continue;
 						}else{
-							link3 += "<li><button class='btn-chon form-control' id='chon'  value='"+value.id+"'>"+value.name_table+"</button></li>";
+							link3 += `<li><button class='btn-chon form-control' id='chon'  value='"${value.id}"'>"${value.name_table}</button></li>`;
 
 						}
 					})

@@ -44,10 +44,10 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Danh sách đơn hàng</strong>
+                            <strong class="card-title">Danh sách đơn hàng đã Xác Nhận</strong>
                         </div>
                         <div class="card-body">
-                            <table class="table table-striped">
+                        <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                 <thead>
                                     <tr>
                                         <th scope="col">Mã Đơn Hàng</th>
@@ -64,13 +64,13 @@
                                           {{$i->id}} 
                                         </td>
                                         <td>
-                                        {{$i->date}}
+                                        {{date('d/m/Y', strtotime($i->date))}}
                                         </td>
                                         <td>
                                          {{ $i->name_cus}}
                                         </td>
                                         <td>
-                                        {{ $i->totail}} 
+                                        {{number_format($i->totail)}} VNĐ 
                                         </td>
                                         <td>
                                                     <a href="#">

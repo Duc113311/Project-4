@@ -26,11 +26,12 @@
 					@if(Auth::check())
 					<li><a href="{{route('logout')}}"  >Đăng xuất</a></li>
 					<li>Chào,{{Auth::user()->name}}</li>
+					
 					@else
 					<li><a href="#" data-toggle="modal" data-target="#reginter" >Đăng ký</a></li>
 					<li><a href="#" data-toggle="modal" data-target="#loginuser" >Đăng nhập</a></li>
 					@endif
-					<li><a href="#" >Đơn Hàng</a></li>
+					<li><a href="{{route('trangthai')}}" >Đơn Hàng</a></li>
 					<li>
 						<a href="#" class="shop_cart" type="submit" name="submit" value="">
 							<i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
@@ -144,11 +145,10 @@
 			</div>
 			<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="index.html" class="act">TRANG CHỦ</a></li>
+					<li class="active"><a href="{{route('trangchu')}}" class="act">TRANG CHỦ</a></li>
 					<!-- Mega Menu -->
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle">GIỚI THIỆU</a>
-
+						<a href="{{route('trangchu')}}" class="dropdown-toggle">GIỚI THIỆU</a>
 					</li>
 					<li class="dropdown">
 						<a href="" class="dropdown-toggle" data-toggle="dropdown">THỰC ĐƠN<b class="caret"></b></a>
@@ -164,23 +164,9 @@
 							</div>
 						</ul>
 					</li>
+					
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">DỊCH VỤ<b class="caret"></b></a>
-						<ul class="dropdown-menu multi-column columns-3">
-							<div class="row">
-								<div class="multi-gd-img">
-									<ul class="multi-column-dropdown">
-
-										<li><a href="packagedfoods.html">TIỆC SỰ KIỆN</a></li>
-										<li><a href="packagedfoods.html">TIỆC ĐÁM CƯỚI</a></li>
-										<li><a href="packagedfoods.html">TIỆC SINH NHẬT</a>
-									</ul>
-								</div>
-							</div>
-						</ul>
-					</li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">TIN TỨC</a>
+						<a href="{{route('show_new')}}">TIN TỨC</a>
 					</li>
 					<li><a href="gourmet.html">LIÊN HỆ</a></li>
 					<li><a href="offers.html">ĐẶT BÀN</a></li>
@@ -209,11 +195,8 @@
 		 <h4>Đăng ký thông tin</h4>
 	 </div>
 			<div class="login-form-grids">
-								@if(Session::has('mess')!=null)
-								<div class="alert alert-success">{{Session::get('mess')}}</div>
-								@endif
 					<form action="" method="post" id="register_">
-					{{ csrf_field()}}
+					{{ csrf_field() }}
                     <input type="text" placeholder="Nhập tên....." name="name" id="name" required=" " style="margin-bottom: 15px;">
                   
 					<input type="email" placeholder="Nhập email...." required=" " name="email" id="email">
@@ -248,7 +231,7 @@
 			<div class="login-form-grids">
 			
 					<form action="" method="post">
-					{{ csrf_field()}}
+					{{ csrf_field() }}
 					<input type="email" placeholder="Email Address" required=" " name="email" id="iemail">
                    
 					<input type="password" placeholder="Password" required=" " name="password" id="ipassword">
@@ -269,92 +252,7 @@
 @section('js')
 <script src="{{url('editor/ckeditor/ckeditor.js')}}"></script>
 <script src="{{url('editor/ckfinder/ckfinder.js')}}"></script>
-
 <script src="{{url('sweetalert/package/dist/sweetalert2.min.js')}}"></script>
 <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
-<script type="text/javascript">
-    var tk_user={
-		init:function(){
-			tk_user.registersEvent();
-		},
-		registersEvent:function(){
-			$('#btndangky').off('click').on('click',function(envet){
-				event.preventDefault();
-				tk_user.Addangky();
-			});
-			$('#btnDangnhap').off('click').on('click',function(envet){
-				event.preventDefault();
-				tk_user.AddDangnhap();
-			});
-		},
-	Addangky:function()
-	{
-		var url="{!!route('dangky')!!}";
-		$.ajax({
-			url:url,
-			type:'POST',
-			dataType:'json',
-			data:{
-				"_token": "{{ csrf_token() }}",
-				name:$('#name').val(),
-				email:$('#email').val(),
-				password:$('#password').val(),
-				re_password:$('#re_password').val()
-			},
-			success:function(data)
-			{
-				
-				if(data.status===true){
-					alertify.success("Đăng ký thành công");
-					$('#reginter').modal('hide');
-				}
-				else{
-					alertify.error(data.message);
-				}
 
-			},
-			error:function(err)
-			{
-				console.log(err);
-			}
-		});
-	},
-
-	AddDangnhap:function()
-	{
-		var url="{!!route('login')!!}";
-		$.ajax({
-			url:url,
-			type:'POST',
-			dataType:'json',
-			data:{
-				"_token": "{{ csrf_token() }}",
-				email:$('#iemail').val(),
-				password:$('#ipassword').val()
-			},
-			success:function(data)
-			{
-				
-				if(data.status===false){
-					alertify.error(data.message);
-				}
-				else{
-					alertify.success("Đăng nhập thành công");
-					
-					setTimeout(function() {
-                            window.location.reload();
-							$('#loginuser').modal('hide');
-                        }, 1000);
-				}
-				
-			},
-			error:function(err)
-			{
-				console.log(err);
-			}
-		});
-	}
-	};
-	tk_user.init();
-</script>
 @endsection

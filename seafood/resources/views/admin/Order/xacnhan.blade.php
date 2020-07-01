@@ -42,33 +42,36 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Danh sách đơn hàng</strong>
+                            <strong class="card-title">Danh sách đơn hàng chưa xác nhận</strong>
                         </div>
                         <div class="card-body">
-                            <table class="table table-striped">
+                        <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                 <thead>
                                     <tr>
+                                    <th scope="col">STT</th>
                                         <th scope="col">Mã Đơn Hàng</th>
-                                        <th scope="col">Ngày Giao</th>
+                                        <th scope="col">Ngày Đặt</th>
                                         <th scope="col">Tên khách hàng</th>
                                         <th scope="col">Tổng tiền</th>
                                         <th scope="col">Chứa năng</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                   @foreach($ord_cus as $i)
+                                   @foreach($ord_cus as $key=>$i)
                                     <tr>
+                                    <td>
+                                    {{$key++}}</td>
                                         <td>
                                           {{$i->id}} 
                                         </td>
                                         <td>
-                                        {{$i->date}}
+                                        {{date('d/m/y H:i',strtotime($i->created_at))}}
                                         </td>
                                         <td>
                                          {{ $i->name_cus}}
                                         </td>
                                         <td>
-                                        {{ $i->totail}} 
+                                        {{number_format($i->totail)}} VNĐ 
                                         </td>
                                         <td>
                                                     <a href="{{URL::to('/view_ct_don_onl/'.$i->id)}}" >

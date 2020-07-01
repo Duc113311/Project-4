@@ -10,23 +10,29 @@ use Illuminate\Support\Facades\Redirect;
 use App\categorymodel;
 use Illuminate\Pagination\Paginator;
 Use Alert;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMail;
 use App\CommentModel;
 class HomeController extends Controller
 {
     public function index(){
+      $tintuc_n=DB::table('news_food')->orderBy('id','desc')->limit(3)->get();
+
         $all_food=DB::table('tbl_category')->where('idparent','2')->orderby('id','desc')->limit(6)->get();
         $category=DB::table('tbl_category')->where('idparent','0')->orderby('id','asc')->get();
 
-        $food_hot=DB::table('tbl_category')
-        ->join('order_detail','order_detail.id_category','=','tbl_category.id')->orderBy('qty','desc')->limit(6)->get();
-
+        $food_hot=DB::table('top6spbc')->get(); 
+        
         $table=DB::table('tbl_table')->where('idparent','1')->orderBy('id','asc')->get();
                                             $table1=DB::table('tbl_table')->where('idparent','2')->orderBy('id','asc')->get();
-
+              
         return view('pages.home')->with('all_food',$all_food)
-        ->with('category',$category)->with('food_hot',$food_hot)->with('tbl_table',$table)->with('tbl_table1',$table1);
+        ->with('category',$category)
+        ->with('food_hot',$food_hot)
+        ->with('tbl_table',$table)
+        ->with('tbl_table1',$table1)
+        ->with('tintuc_n',$tintuc_n);
     }
     public function gettable_book(Request $request)
     {
@@ -79,60 +85,63 @@ class HomeController extends Controller
     return view('pages.listfood',['tbl_category'=>$ct_cate_food])->with('ct_cate_food',$ct_cate_food)->with('category',$category);
    }
 
-  //  public function SendMail($mail)
-  //  {
-  //    dd('vao');
-  //    $details=[
-  //      'title'=>'Mail from Seafood',
-  //      'body'=>'Đây là tin nhắn'
-  //    ];
-  //    \mail::to($mail)->send(new \App\Mail\SendMail($details));
-  //  }
+ 
   
   public function Booktable(Request $request)
   {
     $all_food=DB::table('tbl_category')->where('idparent','2')->orderby('id','desc')->limit(6)->get();
     $category=DB::table('tbl_category')->where('idparent','0')->orderby('id','asc')->get();
-    $this->validate($request,
+    $validator = Validator::make($request->all(),
     [
         'name_customer'=>'required|min:2|max:255',
-        'order_date'=>'required',
         'phone_number'=>'required',
         'Number_customer'=>'required',
         'email'=>'required',
         'Note'=>'required|min:2|max:255',
-        'time_order'=>'required',
     ],
     [
         'name_customer.required'=>'Họ tên không được bỏ trống',
         'name_customer.min'=>'Họ tên tối thiểu 2 ký tự',
         'name_customer.max'=>'Họ tên tối đa 255 ký tự',
-        'order_date.required'=>'Ngày đặt không được bỏ trống',
         'phone_number.required'=>'Số điện thoại không được bỏ trống',
         'Number_customer.required'=>'Số khách hàng không được bỏ trống',
+        'email.required'=>'Email không được bỏ trống',
         'Note.min'=>'Ghi chú tối thiểu 2 ký tự',
         'Note.max'=>'Ghi chú tối đa 255 ký tự',
-    ]
-);
-$data=array();
-$data['name_customer']=$request->name_customer;
-$data['email']=$request->email;
-
-$data['phone_number']=$request->phone_number;
-$data['Number_customer']=$request->Number_customer;
-$data['id_table']=$request->ban;
-$data['order_date']=$request->order_date;
-$data['time_order']=$request->time_order;
-$data['min_price']=$request->min_price;
-$data['Note']=$request->Note;
-$rs= DB::table('book_table')->insert($data);
-
-// dd($rs);
-  return redirect('/');
-
-  }
-
-
+        ]);
+    if ($validator->fails()) {
+          return response()->json([
+        'status'=>false,
+        'message'=>"Loi"
+          ],200);
+        }else{
+        $data=array();
+            $data['name_customer']=$request->name_customer;
+            $data['email']=$request->email;
+            $data['phone_number']=$request->phone_number;
+            $data['Number_customer']=$request->Number_customer;
+            $data['id_table']=$request->ban;
+            $data['order_date']=$request->order_date;
+            $data['time_order']=$request->time_order;
+            $data['min_price']=$request->min_price;
+            $data['Note']=$request->Note;
+            $rs= DB::table('book_table')->insert($data);
+        $details=[
+          'title'=>'Nhà Hàng Seafood',
+          'body'=>'Cảm ơn Quý khách đã đặt bàn, xin vui lòng chờ bên nhà hàng xác nhận',
+          'content'=>$request->name_customer,
+          'phone'=>$request->phone_number,
+          'song'=>$request->Number_customer,
+          'ngay'=>$request->order_date,
+          'tgian'=>$request->time_order,
+          'gia'=>$request->min_price,
+        ];
+        Mail::to($request->email)->send(new \App\Mail\SendMail($details));
+        return response()->json([
+          'status'=>$rs
+        ]);
+        }
+    }
   public function postComment(Request $request,$id)
   {
     $comment= new CommentModel;

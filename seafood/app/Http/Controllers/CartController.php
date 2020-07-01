@@ -12,6 +12,9 @@ use App\Cart;
 use App\order_detai_modal;
 use App\f_orderModel;
 use Illuminate\Support\Facades\Auth;
+use App\Mail\SendMail;
+use Illuminate\Support\Facades\Mail;
+use PDF;
 class CartController extends Controller
 {
    
@@ -141,7 +144,7 @@ class CartController extends Controller
             $order_detail->price=$value['price'];
             $order_detail->save();
         }
-
+      
         Session::forget('Cart');
         
         return redirect()->route('trangthai');
@@ -261,6 +264,7 @@ class CartController extends Controller
         return view('admin.Order.view_ct_d')->with('orders',$orders)->with('order_details',$order_details);
     }
 
+   
 
 
 

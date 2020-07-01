@@ -1,4 +1,14 @@
 <!-- //footer -->
+<div class="quick-alo-phone quick-alo-green quick-alo-show" id="quick-alo-phoneIcon">
+   <a href="tel:01674596344" title="Liên hệ nhanh">
+      <div class="quick-alo-ph-circle"></div>
+      <div class="quick-alo-ph-circle-fill"></div>
+      <div class="quick-alo-ph-img-circle"></div>
+   </a>
+</div>
+<div style="bottom: 55px !important" class="zalo-chat-widget" data-oaid="579745863508352884" data-welcome-message="Rất vui khi được hỗ trợ bạn!" data-autopopup="0" data-width="350" data-height="420"></div>
+
+<script src="https://sp.zalo.me/plugins/sdk.js"></script>
 <div class="footer">
 		<div class="container">
 			<div class="w3_footer_grids">

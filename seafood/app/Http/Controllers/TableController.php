@@ -80,9 +80,6 @@ class TableController extends Controller
         DB::table('book_detail')->insert($dataInsert);
             
         }
-        // $table_book = new categorymodel();
-        // $table_book->name_menu=$request->name_menu;
-        // $restul=$table_book->save();
         return response([
             'status'=>true
         ]);

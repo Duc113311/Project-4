@@ -47,7 +47,7 @@
                             <strong class="card-title">Danh sách đơn hàng</strong>
                         </div>
                         <div class="card-body">
-                            <table class="table table-striped">
+                        <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                 <thead>
                                     <tr>
                                         <th scope="col">Mã Đơn Hàng</th>
@@ -64,13 +64,13 @@
                                           {{$i->id}} 
                                         </td>
                                         <td>
-                                        {{$i->date}}
+                                        {{date('d/m/Y', strtotime($i->date))}}
                                         </td>
                                         <td>
                                          {{ $i->name_cus}}
                                         </td>
                                         <td>
-                                        {{ $i->totail}} 
+                                        {{number_format($i->totail)}} VNĐ
                                         </td>
                                         <td>
                                                     <a href="#">
@@ -79,9 +79,7 @@
                                                     <a href="#">
                                                     <button type="button" class="btn btn-warning">Chế biến xong</button>
                                                     </a>
-                                                    <a href="{{URL::to('/chuaxacnhan/'.$i->id)}}">
-                                                    <button class="btn btn-danger" type="button">Hủy</button>
-                                                    </a>
+                                                   
                                         </td>
                                     </tr>
                                    @endforeach

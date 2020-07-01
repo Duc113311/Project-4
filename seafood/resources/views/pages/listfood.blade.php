@@ -73,33 +73,7 @@
 			<div class="col-md-9 products-right">
 				<div class="products-right-grid">
 					<div class="products-right-grids">
-						<form action="" id="form_order" method="get">
-							<div class="sorting">
-								<select id="country" onchange="orderby1(this)" name="orderby" >
-									<option value="md"></i>Mặc định phân
-										loại</option>
-									<option value="desc"></i>Mới nhất
-									</option>
-									<option value="ace"></i>Món cũ
-									</option>
-									<option value="price_max"></i>Giá
-										tăng dần</option>
-									<option value="price_min"></i>Giá
-										dảm dần</option>
-								</select>
-							</div>
-						</form>
-						<div class="sorting-left">
-							<select id="country1" onchange="change_country(this.value)" class="frm-field required sect">
-								<option value="null"><i class="fa fa-arrow-right" aria-hidden="true"></i>Mục trên trang
-									9</option>
-								<option value="null"><i class="fa fa-arrow-right" aria-hidden="true"></i>Mục trên trang
-									18</option>
-								<option value="null"><i class="fa fa-arrow-right" aria-hidden="true"></i>Mục trên trang
-									32</option>
-								<option value="null"><i class="fa fa-arrow-right" aria-hidden="true"></i>Tất cả</option>
-							</select>
-						</div>
+						
 						<div class="clearfix"> </div>
 					</div>
 				</div>
@@ -109,7 +83,7 @@
 						<div class="hover14 column">
 							<div class="agile_top_brand_left_grid">
 								<div class="agile_top_brand_left_grid_pos">
-									<img src="img_sp\offer.jpg" alt=" " class="img-responsive">
+									
 								</div>
 								<div class="agile_top_brand_left_grid1">
 									<figure>
@@ -120,6 +94,18 @@
 												<a href="{{URL::to('/chitietfood/'.$ite->id)}}">
 													<p>{{$ite->name_menu}}</p>
 												</a>
+												<div class="stars">
+																		<i class="fa fa-star blue-star"
+																			aria-hidden="true"></i>
+																		<i class="fa fa-star blue-star"
+																			aria-hidden="true"></i>
+																		<i class="fa fa-star blue-star"
+																			aria-hidden="true"></i>
+																		<i class="fa fa-star blue-star"
+																			aria-hidden="true"></i>
+																		<i class="fa fa-star gray-star"
+																			aria-hidden="true"></i>
+																	</div>
 
 												<p><b>{{number_format($ite->price)}}<sup>₫</sup></b></P>
 											</div>

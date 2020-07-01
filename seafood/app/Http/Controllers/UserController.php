@@ -65,11 +65,12 @@ class UserController extends Controller
 
     public function register_dk(Request $req)
     {
+        // dd($req->all());
         $validator = Validator::make($req->all(),
         [
             'name'=>'required|min:2|max:255',
             'email'=>'required|email|unique:users,email',
-            'password'=>'required|min:6|max:255',
+            'password'=>'required|min:5|max:8',
             're_password'=>'required|same:password',
         ],
         [
@@ -80,8 +81,8 @@ class UserController extends Controller
             'email.email'=>'Địa chỉ email không đúng định dạng',
             'email.unique'=>'Địa chỉ email đã tồn tại',
             'password.required'=>'Đã tồn tại đại chỉ email trong hệ thống',
-            'password.min'=>'Mật khẩu không được bỏ trống',
-            'password.max'=>'Mật khẩu tối đa 255 ký tự', 
+            'password.min'=>'Mật khẩu tối thiểu 5',
+            'password.max'=>'Mật khẩu tối đa 8 ký tự', 
             're_password.required'=>'Không được bỏ trống',
             're_password.same'=>'Nhập không đúng với trường mật khẩu',
 
